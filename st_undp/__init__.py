@@ -6,6 +6,8 @@ from importlib import resources
 
 import streamlit as st
 
+from .components import *
+
 
 def apply_style():
     """
