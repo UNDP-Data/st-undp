@@ -27,7 +27,7 @@ st.header("Header")
 st.subheader("Subheader")
 st.text("Regular text.")
 
-st.markdown('More regular text with an [example link](https://www.example.com).')
+st.markdown("More regular text with an [example link](https://www.example.com).")
 
 tab1, tab2, tab3 = st.tabs(["Buttons", "Forms", "Alerts"])
 
