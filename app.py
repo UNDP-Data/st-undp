@@ -65,10 +65,10 @@ with tab2:
             st.json(st.session_state)
 
 with tab3:
-    st.success("Success")
-    st.info("Info")
-    st.warning("Warning")
-    st.error("Error")
+    st.success("Success", icon=":material/check_circle:")
+    st.info("Info", icon=":material/info:")
+    st.warning("Warning", icon=":material/warning:")
+    st.error("Error", icon=":material/error:")
 
 with tab4:
     st.subheader("Stats Cards")
