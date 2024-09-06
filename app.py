@@ -29,7 +29,7 @@ st.text("Regular text.")
 
 st.markdown("More regular text with an [example link](https://www.example.com).")
 
-tab1, tab2, tab3 = st.tabs(["Buttons", "Forms", "Alerts"])
+tab1, tab2, tab3, tab4 = st.tabs(["Buttons", "Forms", "Alerts", "Custom Components"])
 
 with tab1:
     col1, col2 = st.columns(2)
@@ -69,3 +69,29 @@ with tab3:
     st.info("Info")
     st.warning("Warning")
     st.error("Error")
+
+with tab4:
+    st.subheader("Stats Cards")
+    col1, col2 = st.columns(2)
+    with col1:
+        code = """
+        st_undp.stats_card(
+            value=3.14,
+            title="Pi",
+            text="Pi is a mathematical constant that is the ratio of a circle's circumference to its diameter",
+        )
+        """
+        eval(code.strip())
+        with st.expander("Show Code"):
+            st.code(code)
+    with col2:
+        code = """
+        st_undp.stats_card(
+            value=2.71,
+            title="Euler's constant",
+            text="Euler's constant is  is a mathematical constant, defined as the limiting difference between the harmonic series and the natural logarithm",
+        )
+        """
+        eval(code.strip())
+        with st.expander("Show Code"):
+            st.code(code)
