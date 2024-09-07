@@ -13,7 +13,7 @@ A utility package that styles Streamlit apps according to [UNDP Design System](h
 
 ## Installation
 
-Currently, the package is distributed via GitHub only. You can install with `pip` with:
+Currently, the package is distributed via GitHub only. You can install it with `pip`:
 
 ```bash
 # latest version from the default branch (not recommended)
@@ -72,11 +72,6 @@ st_undp.apply_style()
 st.header("Hello world!")  # now UNDP-styled
 ```
 
-To launch an example app that showcases the style and components, run:
-
-```shell
-python -m streamlit run app.py
-```
 ## Features
 
 This package is currently in the early stages of development. Main features include:
@@ -87,18 +82,17 @@ This package is currently in the early stages of development. Main features incl
 
 ## Contributing
 
-Guidelines for contributing to your project. This can include how to report issues, submit pull requests, and coding standards.
-
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature-branch`)
-3. Make your changes
-4. Commit your changes (`git commit -m 'Add some feature'`)
-5. Push to the branch (`git push origin feature-branch`)
-6. Open a pull request
-
 All contributions must follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 The codebase is formatted with `black` and `isort`. Use the provided [Makefile](./Makefile) for these
 routine operations.
+
+1. Clone or fork the repository
+2. Create a new branch (`git checkout -b feature-branch`)
+3. Make your changes
+4. Ensure your code is properly formatted (`make format`)
+5. Commit your changes (`git commit -m 'Add some feature'`)
+6. Push to the branch (`git push origin feature-branch`)
+7. Open a pull request
 
 ## License
 
@@ -114,5 +108,4 @@ Their unauthorized use is prohibited, and they may not be reproduced or used in 
 This project is part of [Data Futures Exchange (DFx)](https://data.undp.org) at UNDP.
 If you are facing any issues or would like to make some suggestions, feel free to 
 [open an issue](https://github.com/undp-data/st-undp/issues/new/choose). 
-
 For enquiries about DFx, visit [Contact Us](https://data.undp.org/contact-us).
