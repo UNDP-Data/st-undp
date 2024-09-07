@@ -60,7 +60,7 @@ with tab2:
         st.color_picker("Colour picker")
         st.file_uploader("File uploader")
 
-        submitted = st.form_submit_button("Form submit button")
+        submitted = st.form_submit_button("Form submit button", type="primary")
         if submitted:
             st.json(st.session_state)
 
