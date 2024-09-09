@@ -1,0 +1,30 @@
+{
+  "focus areas": {
+    "Energy": "https://data.undp.org/energy",
+    "Environment": "https://data.undp.org/environment",
+    "Gender Equality": "https://data.undp.org/gender-equality",
+    "Governance": "https://data.undp.org/governance",
+    "Poverty and Inequality": "https://data.undp.org/poverty-and-inequality",
+    "Resilience": "https://data.undp.org/resilience"
+  },
+  "regions & countries": {
+    "Africa": "https://data.undp.org/regions/africa",
+    "Arab States": "https://data.undp.org/regions/arab-states",
+    "Asia and the Pacific": "https://data.undp.org/regions/asia-and-the-pacific",
+    "Europe and Central Asia": "https://data.undp.org/regions/europe-and-central-asia",
+    "Latin America and the Caribbean": "https://data.undp.org/regions/latin-america-and-the-caribbean",
+    "All Countries and Territories": "https://data.undp.org/countries-and-territories"
+  },
+  "resources": {
+    "Insights": "https://data.undp.org/insights",
+    "Products": "https://data.undp.org/products",
+    "Tools": "https://data.undp.org/tools",
+    "Access All Data": "https://data.undp.org/access-all-data",
+    "MyDFx🔒": "https://data.undp.org/mydfx"
+  },
+  "about us": {
+    "About DFx": "https://data.undp.org/about",
+    "Our Partners": "https://data.undp.org/our-partners",
+    "Contact Us": "https://data.undp.org/contact-us"
+  }
+}

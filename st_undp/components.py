@@ -2,9 +2,40 @@
 Static HTML components in UNDP style.
 """
 
-import streamlit as st
+import json
+from typing import Literal
 
-__all__ = ["stats_card"]
+import streamlit as st
+from jinja2 import Environment, PackageLoader
+
+from .utils import read_file
+
+__all__ = ["footer", "stats_card"]
+
+
+env = Environment(loader=PackageLoader("st_undp"))
+
+
+def footer(columns: Literal["dfx", "default"] | dict[str, dict[str, str]] = "default"):
+    if isinstance(columns, str):
+        data = read_file(f"footer-{columns}.json", "st_undp.data")
+        columns = json.loads(data)
+    elif isinstance(columns, dict):
+        pass
+    else:
+        raise ValueError("Columns must one of 'dfx', 'default', or a mapping.")
+    items = []
+    for index, (title, pages) in enumerate(columns.items(), start=1):
+        item = __footer_item(id=index, title=title, pages=pages)
+        items.append(item)
+    template = env.get_template("footer.html")
+    body = template.render(items=items)
+    st.html(body)
+
+
+def __footer_item(id: int, title: str, pages: dict) -> str:
+    template = env.get_template("footer-item.html")
+    return template.render(id=id, title=title, pages=pages)
 
 
 def stats_card(value: int | float | str, title: str, text: str = "") -> None:

@@ -1,0 +1,23 @@
+<div class="cell footer-item">
+    <button
+            type="button"
+            id="footer-item-{{ id }}"
+            class="footer-heading desktop-event-none"
+            tabindex="0"
+            aria-controls="footer-panel-{{ id }}"
+            aria-expanded="false"
+    >
+        {{ title }}
+    </button>
+    <div
+            id="footer-panel-{{ id }}"
+            class="footer-panel desktop-visible"
+            aria-label="footer-item-{{ id }}"
+            aria-hidden="false"
+            role="region"
+    >
+        {% for title, href in pages.items() %}
+            <a href="{{ href }}" title="{{ title }}">{{ title }}</a>
+        {% endfor %}
+    </div>
+</div>

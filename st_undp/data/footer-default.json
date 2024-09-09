@@ -1,0 +1,31 @@
+{
+  "who we are": {
+    "About us": "https://www.undp.org/about-us",
+    "Leadership": "https://www.undp.org/our-leadership",
+    "Executive Board": "https://www.undp.org/executive-board",
+    "Our Partners": "https://www.undp.org/our-partners",
+    "Funding": "https://www.undp.org/funding",
+    "Transparency and Accountability": "https://www.undp.org/accountability"
+  },
+  "what we do": {
+    "Sustainable Development Goals": "https://www.undp.org/sustainable-development-goals",
+    "Human Development Report": "http://hdr.undp.org/",
+    "Our Strategic Plan": "https://strategicplan.undp.org/",
+    "Our expertise": "https://www.undp.org/expertise"
+  },
+  "our impact": {
+    "News Centre": "https://www.undp.org/news-centre",
+    "Results": "https://www.undp.org/results",
+    "Publications": "https://www.undp.org/publications",
+    "Blogs": "https://www.undp.org/blog",
+    "Stories": "https://www.undp.org/stories",
+    "Asset library": "https://assets.undp.org/"
+  },
+  "get involved": {
+    "Careers": "https://www.undp.org/careers",
+    "Procurement": "https://www.undp.org/procurement",
+    "UNDP Shop": "https://shop.undp.org/",
+    "UNDP Giving": "https://www.undp.org/impact-giving",
+    "Contact us": "https://www.undp.org/contact-us"
+  }
+}
