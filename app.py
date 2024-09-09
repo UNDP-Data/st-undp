@@ -29,7 +29,9 @@ st.text("Regular text.")
 
 st.markdown("More regular text with an [example link](https://data.undp.org).")
 
-tab1, tab2, tab3, tab4 = st.tabs(["Buttons", "Forms", "Alerts", "Custom Components"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(
+    ["Buttons", "Forms", "Alerts", "Custom Components", "Footer"]
+)
 
 with tab1:
     col1, col2 = st.columns(2)
@@ -95,3 +97,39 @@ with tab4:
         eval(code.strip())
         with st.expander("Show Code"):
             st.code(code)
+
+with tab5:
+    body = "Make sure to call the footer function at the bottom of your script outside of any tab, column etc."
+    st.info(body, icon=":material/lightbulb:")
+    footer = st.radio(
+        label="Footer",
+        options=("None", "UNDP (Default)", "UNDP DFx", "Custom"),
+        index=0,
+    )
+
+    footer = footer.lower()
+    if "default" in footer:
+        code = """st_undp.footer()"""
+    elif "dfx" in footer:
+        code = """st_undp.footer("dfx")"""
+    elif "custom" in footer:
+        columns = {
+            "focus areas": {
+                "Energy": "https://data.undp.org/energy",
+                "Environment": "https://data.undp.org/environment",
+                "Governance": "https://data.undp.org/governance",
+            },
+            "about us": {
+                "About DFx": "https://data.undp.org/about",
+                "Our Partners": "https://data.undp.org/our-partners",
+                "Contact Us": "https://data.undp.org/contact-us",
+            },
+        }
+        st.json(columns)
+        code = """st_undp.footer(columns)"""
+    else:
+        code = "None"
+    with st.expander("Show Code"):
+        st.code(code)
+
+eval(code)
