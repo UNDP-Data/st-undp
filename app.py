@@ -16,7 +16,7 @@ st.set_page_config(
     menu_items={
         "Get help": "https://github.com/undp-data/st-undp",
         "Report a Bug": "https://github.com/undp-data/st-undp/issues",
-        "About": None,
+        "About": "Developed with [st-undp](https://github.com/undp-data/st-undp).",
     },
 )
 
