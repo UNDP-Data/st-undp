@@ -31,8 +31,8 @@ tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(
 )
 
 with tab1:
-    st.text("Regular text.")
-    st.markdown("More regular text with an [example link](https://data.undp.org).")
+    st.markdown("Regular text with an [example link](https://data.undp.org).")
+    st.text("Do not use `st.text`. Its content will not be properly styled.")
 
 with tab2:
     col1, col2 = st.columns(2)
