@@ -12,5 +12,6 @@ def apply_style():
     """
     Apply the CSS rules based on [UNDP Design System](https://design.undp.org).
     """
-    body = read_file("style.html")
+    css = read_file("main.scss")
+    body = f"<style>{css}</style>"
     st.html(body)

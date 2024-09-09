@@ -1,0 +1,313 @@
+/* Import external stylesheets */
+@import url("https://undp-data.github.io/stylesheets-for-viz/style/mainStyleSheet.css");
+@import url("https://use.typekit.net/jtg8msg.css");
+
+/* Font settings */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  font-family: "proxima-nova", sans-serif;
+}
+
+/* Code block styling */
+code {
+  background: var(--gray-200);
+  color: rgb(84, 84, 84);
+  padding: 0.5em;
+}
+
+/* Link styling */
+div[data-testid="stMarkdownContainer"] a,
+div[data-testid="stMarkdownContainer"] > ul > li > a {
+  background-image: linear-gradient(var(--dark-red), var(--dark-red)),
+  linear-gradient(var(--dark-red), var(--dark-red));
+  background-position: 100% 100%, -30px 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 2px, 0 1px;
+  text-decoration: none;
+  color: var(--black);
+}
+
+div[data-testid="stMarkdownContainer"] a:hover,
+div[data-testid="stMarkdownContainer"] > ul > li > a:hover {
+  animation: lineLoop-animation-for-links 2s linear infinite;
+  color: var(--black);
+}
+
+div[data-testid="stMarkdownContainer"] > ul > li > a:focus-visible {
+  box-shadow: 0 0 4px var(--blue-600);
+  outline: 0;
+}
+
+/* Text color settings */
+div[data-testid="stExpander"] > summary,
+div[data-testid="stMarkdownContainer"]:hover,
+div[data-testid="stMarkdownContainer"] p,
+div[data-testid="stMarkdownContainer"] p:hover {
+  color: var(--black);
+}
+
+/* Blockquote styling */
+div[data-testid="stAlert"] {
+  border: solid 1px var(--gray-200);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+div[data-testid="stAlert"] > div {
+  background-color: var(--white);
+  padding: 2rem 4.5rem;
+}
+
+/* Heading styling */
+div[data-testid="stHeadingWithActionElements"] > h1 {
+  text-transform: uppercase;
+}
+
+/* Stat card smaller styling */
+.stat-card-smaller {
+  padding: 1rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 17.5rem;
+  background-color: var(--gray-200);
+  font-size: 1.25rem;
+  color: var(--black);
+  transition: 300ms all;
+  height: auto !important;
+}
+
+.stat-card-smaller:hover {
+  background-color: var(--light-yellow);
+}
+
+.stat-card-smaller.no-hover:hover {
+  background-color: var(--gray-200);
+}
+
+.stat-card-smaller h2,
+.stat-card-smaller h3 {
+  line-height: 1.09;
+  text-shadow: none;
+  -webkit-text-stroke: 2px var(--black);
+  color: var(--gray-200);
+  letter-spacing: 0.05rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: var(--fontFamilyHeadings);
+}
+
+.stat-card-smaller h2 {
+  font-size: 3rem;
+}
+
+.stat-card-smaller h3 {
+  font-size: 2.375rem;
+}
+
+.stat-card-smaller h4 {
+  line-height: 1.15;
+  color: var(--black);
+  font-size: 1.563rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stat-card-smaller p {
+  line-height: 1.15;
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.stat-card-smaller:hover h2,
+.stat-card-smaller:hover h3 {
+  color: var(--black);
+}
+
+.stat-card-smaller.no-hover:hover h2,
+.stat-card-smaller.no-hover:hover h3 {
+  color: var(--gray-200);
+}
+
+@media (max-width: 48em) {
+  .stats-card-smaller.small h2 {
+    font-size: 4.375rem;
+  }
+
+  .stats-card.small h3 {
+    font-size: 3.5rem;
+  }
+}
+
+/* Form boundary styling */
+div[data-testid="stForm"] {
+  border-radius: 0;
+  border: solid 1px var(--black);
+}
+
+/* Button base styling */
+div[data-testid="stButton"] > button,
+button[data-testid="stBaseButton-secondary"],
+button[data-testid="stBaseButton-secondaryFormSubmit"],
+button[data-testid="baseButton-primaryFormSubmit"],
+button[data-testid="baseButton-secondaryFormSubmit"],
+button[data-testid="stBaseButton-primaryFormSubmit"] {
+  border-radius: 0px;
+  align-items: center;
+  border: none;
+  display: flex;
+  font-family: "proxima-nova", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  margin: 0 !important;
+  border-radius: 0;
+}
+
+/* Primary button styling */
+button[data-testid="stBaseButton-primary"],
+button[data-testid="stBaseButton-primaryFormSubmit"],
+button[data-testid="stBaseButton-primary"] > div > p,
+button[data-testid="stBaseButton-primaryFormSubmit"] > div > p {
+  background-color: var(--dark-red);
+  color: white;
+}
+
+button[data-testid="stBaseButton-primary"]:hover,
+button[data-testid="stBaseButton-primaryFormSubmit"]:hover,
+button[data-testid="baseButton-primaryFormSubmit"]:hover,
+button[data-testid="stBaseButton-primary"] > div > p:hover,
+button[data-testid="stBaseButton-primaryFormSubmit"] > div > p:hover {
+  background-color: var(--red);
+  color: white;
+}
+
+button[data-testid="stBaseButton-primary"]:focus-visible,
+button[data-testid="stBaseButton-primaryFormSubmit"]:focus-visible,
+button[data-testid="baseButton-primaryFormSubmit"]:focus-visible,
+button[data-testid="stBaseButton-primary"] > div > p:focus-visible,
+button[data-testid="stBaseButton-primaryFormSubmit"] > div > p:focus-visible {
+  box-shadow: 0 0 4px white;
+  outline: 0;
+}
+
+/* Secondary button styling */
+button[data-testid="stBaseButton-secondary"],
+button[data-testid="stBaseButton-secondaryFormSubmit"],
+button[data-testid="stBaseButton-secondary"] > div > p,
+button[data-testid="stBaseButton-secondaryFormSubmit"] > div > p {
+  background-color: var(--blue-600);
+  color: white;
+}
+
+button[data-testid="stBaseButton-secondary"]:hover,
+button[data-testid="stBaseButton-secondary"] > div > p:hover,
+button[data-testid="stBaseButton-secondaryFormSubmit"]:hover,
+button[data-testid="stBaseButton-secondaryFormSubmit"] > div > p:hover,
+button[data-testid="baseButton-secondaryFormSubmit"]:hover {
+  background-color: var(--blue-500);
+  color: white;
+}
+
+button[data-testid="stBaseButton-secondary"] {
+  background-color: var(--blue-500);
+  color: white;
+}
+
+button[data-testid="stBaseButton-secondaryFormSubmit"]
+> div
+> p:focus-visible,
+button[data-testid="baseButton-secondaryFormSubmit"]:focus-visible,
+button[data-testid="stBaseButton-secondaryFormSubmit"]:focus-visible,
+button[data-testid="stBaseButton-secondary"] > div > p:focus-visible,
+button[data-testid="stBaseButton-secondary"]:focus-visible {
+  box-shadow: 0 0 4px white;
+  outline: 0;
+}
+
+/* Input elements styling */
+div[data-testid="stNumberInput"] > div > div,
+div[data-testid="stChatInput"],
+div[data-testid="stSelectbox"] > div,
+div[data-testid="stMultiSelect"] > div,
+div[data-testid="stTimeInput"] > div,
+div[data-testid="stDateInput"] > div {
+  border-radius: 0;
+  border: solid 1px var(--black);
+}
+
+div[data-testid="stNumberInput"] > div,
+div[data-testid="stTimeInput"] > div > div,
+div[data-testid="stDateInput"] > div > div,
+div[data-testid="stChatInput"] > div > div,
+div[data-testid="stSelectbox"] > div > div,
+div[data-testid="stMultiSelect"] > div > div > div {
+  border-radius: 0;
+  border: none;
+}
+
+/* Checkbox styling */
+div[data-testid="stCheckbox"] > label > span {
+  background-color: #ffffff;
+  border-color: var(--dark-red);
+  background: url(https://design.undp.org/static/media/icon-check.b332b98d.svg) no-repeat center center;
+}
+
+/* Accordion styling */
+div[data-testid="stExpander"] > details {
+  border: 0 !important;
+  background-color: var(--gray-200) !important;
+  margin-bottom: 1rem !important;
+}
+
+div[data-testid="stExpander"] > details > summary > svg,
+div[data-testid="stExpander"] > details > summary > svg:hover,
+div[data-testid="stExpander"] > details > summary > svg:focus-visible {
+  color: var(--red);
+}
+
+/* Text input styling */
+div[data-testid="stTextInput"] > div,
+div[data-testid="stTextArea"] > div {
+  border-radius: 0;
+  border: solid 1px var(--black);
+}
+
+/* Slider styling */
+div[data-testid="stSlider"] > div > div > div > div {
+  background-color: var(--white);
+  border: 2px solid var(--dark-red);
+  border-radius: 50%;
+}
+
+div[data-testid="stSliderThumbValue"] {
+  color: var(--black);
+}
+
+div[data-testid="stSliderTickBarMin"],
+div[data-testid="stSliderTickBarMax"] {
+  color: var(--black);
+  font-weight: bold;
+}
+
+/* AI chat submit button styling */
+button[data-testid="stChatInputSubmitButton"] {
+  color: var(--dark-red);
+}
+
+/* Streamlit line at the top of the page */
+#stDecoration {
+  display: none;
+}
