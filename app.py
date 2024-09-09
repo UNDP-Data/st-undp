@@ -25,15 +25,16 @@ st_undp.apply_style()
 st.title("Title")
 st.header("Header")
 st.subheader("Subheader")
-st.text("Regular text.")
 
-st.markdown("More regular text with an [example link](https://data.undp.org).")
-
-tab1, tab2, tab3, tab4, tab5 = st.tabs(
-    ["Buttons", "Forms", "Alerts", "Custom Components", "Footer"]
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(
+    ["Text", "Buttons", "Forms", "Alerts", "Custom Components", "Footer"]
 )
 
 with tab1:
+    st.text("Regular text.")
+    st.markdown("More regular text with an [example link](https://data.undp.org).")
+
+with tab2:
     col1, col2 = st.columns(2)
     with col1:
         if clicked := st.button("Button (primary)", type="primary"):
@@ -41,7 +42,7 @@ with tab1:
     with col2:
         if clicked := st.button("Button (secondary)", type="secondary"):
             st.write(f"Clicked: {clicked}")
-with tab2:
+with tab3:
     with st.form("form"):
         st.radio("Radio", OPTIONS, horizontal=True)
         st.number_input("Number input")
@@ -66,13 +67,13 @@ with tab2:
         if submitted:
             st.json(st.session_state)
 
-with tab3:
+with tab4:
     st.success("Success", icon=":material/check_circle:")
     st.info("Info", icon=":material/info:")
     st.warning("Warning", icon=":material/warning:")
     st.error("Error", icon=":material/error:")
 
-with tab4:
+with tab5:
     st.subheader("Stats Cards")
     col1, col2 = st.columns(2)
     with col1:
@@ -98,7 +99,7 @@ with tab4:
         with st.expander("Show Code"):
             st.code(code)
 
-with tab5:
+with tab6:
     body = "Make sure to call the footer function at the bottom of your script outside of any tab, column etc."
     st.info(body, icon=":material/lightbulb:")
     footer = st.radio(
