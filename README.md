@@ -35,32 +35,13 @@ See [VCS Support](https://pip.pypa.io/en/stable/topics/vcs-support/#vcs-support)
 
 The package is intended to make styling a breeze. The most basic usage involves only two simple steps.
 
-First, copy the below template to your `.streamlit/config.toml`:
+First, use the CLI to set up the recommended theme in `.streamlit/config.toml`:
 
-```toml
-[theme]
-
-# The preset Streamlit theme that your custom theme inherits from.
-# One of "light" or "dark".
-base = "light"
-
-# Primary accent color for interactive elements.
-primaryColor = "#d12800"  # dark-red
-
-# Background color for the main content area.
-backgroundColor = "#FFFFFF"
-
-# Background color used for the sidebar and most interactive widgets.
-secondaryBackgroundColor = "#F7F7F7"  # gray-200
-
-# Color used for almost all text.
-textColor = "#000000"
-
-# Font family for all text in the app, except code blocks. One of "sans serif",
-# "serif", or "monospace".
-font = "sans serif"
+```shell
+python -m st_undp configure
 ```
 
+This will edit the theme section in the file if it exists or create it if it doesn't.
 Then, call `apply_style` function inside your application entry point, typically `app.py`: 
 
 ```python
