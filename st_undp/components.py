@@ -16,9 +16,13 @@ __all__ = ["footer", "logo", "stats_card"]
 env = Environment(loader=PackageLoader("st_undp"))
 
 
-def logo(link: str = "https://data.undp.org"):
-    file_path = "https://design.undp.org/static/media/undp-logo-blue.4f32e17f.svg"
-    st.logo(image=file_path, link=link, icon_image=file_path)
+def logo(
+    name: Literal["undp", "pnud"] = "undp",
+    colour: Literal["blue", "white"] = "blue",
+    link: str = "https://data.undp.org",
+):
+    image = read_file(f"images/{name}-logo-{colour}.svg", "r")
+    st.logo(image=image, link=link, icon_image=image)
 
 
 def footer(columns: Literal["dfx", "default"] | dict[str, dict[str, str]] = "default"):
