@@ -21,6 +21,7 @@ st.set_page_config(
 )
 
 st_undp.apply_style()
+st_undp.logo()
 
 st.title("Title")
 st.header("Header")
