@@ -21,14 +21,13 @@ st.set_page_config(
 )
 
 st_undp.apply_style()
-st_undp.logo()
 
 st.title("Title")
 st.header("Header")
 st.subheader("Subheader")
 
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(
-    ["Text", "Buttons", "Forms", "Alerts", "Custom Components", "Footer"]
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(
+    ["Text", "Buttons", "Forms", "Alerts", "Custom Components", "Logo", "Footer"]
 )
 
 with tab1:
@@ -101,6 +100,19 @@ with tab5:
             st.code(code)
 
 with tab6:
+    name = st.radio("Name", ("UNDP", "PNUD"), horizontal=True)
+    colour = st.radio("Colour", ("Blue", "White"), horizontal=True)
+    if colour.lower() == "white":
+        message = """The white logo is not visible in the light theme. 
+        Change the theme to dark to verify it is there. 
+        However, the dark theme is discouraged in production as the styling is specifically designed for the light theme."""
+        st.info(message, icon=":material/lightbulb:")
+    code = f"""st_undp.logo(name="{name.lower()}", colour="{colour.lower()}")"""
+    with st.expander("Show Code"):
+        st.code(code)
+    eval(code)
+
+with tab7:
     body = "Make sure to call the footer function at the bottom of your script outside of any tab, column etc."
     st.info(body, icon=":material/lightbulb:")
     footer = st.radio(
