@@ -28,7 +28,7 @@ def configure():
         click.echo("No config found, creating...")
         os.makedirs(os.path.dirname(config_path), exist_ok=True)
         config = {}
-    config["theme"] = tomlkit.loads(read_file("config.toml"))
+    config |= tomlkit.loads(read_file("config.toml"))
     with open(config_path, "w+") as file:
         tomlkit.dump(config, file)
     click.echo(f"Added required theme settings to {config_path}.")
