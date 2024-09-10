@@ -23,7 +23,7 @@ def logo(link: str = "https://data.undp.org"):
 
 def footer(columns: Literal["dfx", "default"] | dict[str, dict[str, str]] = "default"):
     if isinstance(columns, str):
-        data = read_file(f"footer-{columns}.json", "st_undp.data")
+        data = read_file(f"data/footer-{columns}.json")
         columns = json.loads(data)
     elif isinstance(columns, dict):
         pass
