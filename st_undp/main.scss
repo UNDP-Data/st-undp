@@ -18,6 +18,11 @@ span {
   font-family: "proxima-nova", sans-serif;
 }
 
+/* Logo, the second selector applies when there is no sidebar */
+img.stLogo, img[data-testid="stLogo"] {
+  height: 4em;
+}
+
 /* Footer */
 footer {
   margin: 1rem -5em -10rem; // works for large screens only
