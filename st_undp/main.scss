@@ -23,6 +23,10 @@ img.stLogo, img[data-testid="stLogo"] {
   height: 4em;
 }
 
+a[data-testid="stLogoLink"] {
+  background-image: none;
+}
+
 /* Footer */
 footer {
   margin: 1rem -5em -10rem; // works for large screens only
