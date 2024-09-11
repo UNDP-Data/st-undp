@@ -52,6 +52,11 @@ div.stHeading h1:first-of-type {
   padding-top: 40px;
 }
 
+/* Sidebar open/collapse button */
+button[data-testid="stBaseButton-headerNoPadding"] {
+  margin-top: 5em;
+}
+
 /* Footer */
 footer {
   margin: 1rem -5em -10rem;
