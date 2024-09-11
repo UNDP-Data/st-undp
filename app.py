@@ -26,8 +26,17 @@ st.title("Title")
 st.header("Header")
 st.subheader("Subheader")
 
-tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(
-    ["Text", "Buttons", "Forms", "Alerts", "Custom Components", "Logo", "Footer"]
+tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs(
+    [
+        "Text",
+        "Buttons",
+        "Forms",
+        "Alerts",
+        "Custom Components",
+        "Logo",
+        "Sidebar",
+        "Footer",
+    ]
 )
 
 with tab1:
@@ -114,6 +123,13 @@ with tab6:
     eval(code)
 
 with tab7:
+    if st.toggle("Sidebar"):
+        with st.sidebar:
+            st.subheader("Sidebar Title")
+            with st.container():
+                st.info("There could be your content.", icon=":material/lightbulb:")
+
+with tab8:
     body = "Make sure to call the footer function at the bottom of your script outside of any tab, column etc."
     st.info(body, icon=":material/lightbulb:")
     footer = st.radio(
