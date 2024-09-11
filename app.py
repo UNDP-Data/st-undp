@@ -8,11 +8,8 @@ import st_undp
 
 OPTIONS = list("ABCDE")
 
-st.set_page_config(
-    page_title="st-undp App",
-    page_icon=":flag-un:",
-    layout="wide",
-    initial_sidebar_state="auto",
+st_undp.set_page_config(
+    title="st-undp App",
     menu_items={
         "Get help": "https://github.com/undp-data/st-undp",
         "Report a Bug": "https://github.com/undp-data/st-undp/issues",
