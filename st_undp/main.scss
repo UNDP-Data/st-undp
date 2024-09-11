@@ -22,12 +22,14 @@ span {
 /* Logo, the second selector applies when there is no sidebar */
 img.stLogo,
 img[data-testid="stLogo"] {
-  height: 5.4em;
+  height: 6.7em;
   position: relative;
+  margin-top: -1.3em;
+  margin-left: -0.7em;
 }
 
 header[data-testid="stHeader"] {
-  height: 6.4rem;
+  height: 7.2rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, .1);
 }
 
@@ -37,10 +39,13 @@ a[data-testid="stLogoLink"] {
 }
 
 a[data-testid="stLogoLink"]::after {
-  content: "Data Futures Exchange";
-  font-size: medium;
-  margin-left: 6px;
+  content: "Data Futures \A Exchange";
+  font-size: 18px;
+  margin-top: 10px;
+  margin-left: 18px;
   color: var(--gray-600);
+  position: absolute;
+  white-space: pre;
   border-bottom: 1px solid var(--gray-500);
 }
 
