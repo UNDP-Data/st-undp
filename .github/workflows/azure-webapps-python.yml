@@ -46,6 +46,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: python-app
+          include-hidden-files: true
           path: |
             .
             !venv/  # Exclude the virtual environment if it exists
