@@ -3,6 +3,7 @@
 @import url("https://use.typekit.net/jtg8msg.css");
 @import url("https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css");
 @import url("https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css");
+@import url("https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css");
 
 /* Font settings */
 html,
@@ -19,17 +20,55 @@ span {
 }
 
 /* Logo, the second selector applies when there is no sidebar */
-img.stLogo, img[data-testid="stLogo"] {
-  height: 4em;
+img.stLogo,
+img[data-testid="stLogo"] {
+  height: 5.4em;
+  position: relative;
+}
+
+header[data-testid="stHeader"] {
+  height: 6.4rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .1);
 }
 
 a[data-testid="stLogoLink"] {
+  text-decoration: none;
   background-image: none;
+}
+
+a[data-testid="stLogoLink"]::after {
+  content: "Data Futures Exchange";
+  font-size: medium;
+  margin-left: 6px;
+  color: var(--gray-600);
+  border-bottom: 1px solid var(--gray-500);
 }
 
 /* Footer */
 footer {
-  margin: 1rem -5em -10rem; // works for large screens only
+  margin: 1rem -5em -10rem;
+}
+
+@media (min-width: 48em) {
+  .footer {
+      padding: 3.25rem 0 var(--undpds-spacing-09);
+  }
+  .footer-items {
+      flex-direction: row; 
+  }
+}
+
+@media (max-width: 48em) {
+  .footer {
+      padding: var(--undpds-spacing-12) var(--undpds-spacing-12);
+  }
+  .footer-logo {
+      flex-direction: column;
+      vertical-align: center;
+  }
+  .footer-items {
+    margin: 1rem 0 0;
+  }
 }
 
 /* Code block styling */
@@ -78,12 +117,13 @@ div[data-testid="stAlert"] {
 
 div[data-testid="stAlert"] > div {
   background-color: var(--white);
-  padding: 2rem 4.5rem;
+  padding: 2rem 1.5rem;
 }
 
 /* Heading styling */
 div[data-testid="stHeadingWithActionElements"] > h1 {
   text-transform: uppercase;
+  padding-top: 20px;
 }
 
 /* Stat card smaller styling */
