@@ -1,0 +1,6 @@
+site_name: st-undp
+site_url: https://undp-data.github.io/st-undp
+theme:
+  name: material
+nav:
+  - Home: index.md
