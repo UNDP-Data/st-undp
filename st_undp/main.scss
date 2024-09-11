@@ -47,6 +47,11 @@ a[data-testid="stLogoLink"]::after {
   white-space: pre;
 }
 
+/* The first h1 on page*/
+div.stHeading h1:first-of-type {
+  padding-top: 40px;
+}
+
 /* Footer */
 footer {
   margin: 1rem -5em -10rem;
