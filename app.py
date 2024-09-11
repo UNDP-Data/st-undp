@@ -100,6 +100,7 @@ with tab5:
             st.code(code)
 
 with tab6:
+    title = st.text_input("Header Title", value="Data Futures \A Exchange")
     name = st.radio("Name", ("UNDP", "PNUD"), horizontal=True)
     colour = st.radio("Colour", ("Blue", "White"), horizontal=True)
     if colour.lower() == "white":
@@ -107,7 +108,7 @@ with tab6:
         Change the theme to dark to verify it is there. 
         However, the dark theme is discouraged in production as the styling is specifically designed for the light theme."""
         st.info(message, icon=":material/lightbulb:")
-    code = f"""st_undp.logo(name="{name.lower()}", colour="{colour.lower()}")"""
+    code = f"""st_undp.logo(name="{name.lower()}", title="{title}", colour="{colour.lower()}")"""
     with st.expander("Show Code"):
         st.code(code)
     eval(code)
