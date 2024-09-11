@@ -28,20 +28,22 @@ st.subheader("Subheader")
 
 tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs(
     [
-        "Text",
-        "Buttons",
-        "Forms",
         "Alerts",
+        "Buttons",
         "Custom Components",
+        "Footer",
+        "Forms",
         "Logo",
         "Sidebar",
-        "Footer",
+        "Text",
     ]
 )
 
 with tab1:
-    st.markdown("Regular text with an [example link](https://data.undp.org).")
-    st.text("Do not use `st.text`. Its content will not be properly styled.")
+    st.success("Success", icon=":material/check_circle:")
+    st.info("Info", icon=":material/info:")
+    st.warning("Warning", icon=":material/warning:")
+    st.error("Error", icon=":material/error:")
 
 with tab2:
     col1, col2 = st.columns(2)
@@ -51,85 +53,34 @@ with tab2:
     with col2:
         if clicked := st.button("Button (secondary)", type="secondary"):
             st.write(f"Clicked: {clicked}")
+
 with tab3:
-    with st.form("form"):
-        st.radio("Radio", OPTIONS, horizontal=True)
-        st.number_input("Number input")
-        col1, col2 = st.columns(2)
-        with col1:
-            st.checkbox("Checkbox")
-            st.selectbox("Selectbox", OPTIONS)
-            st.select_slider("Slider", OPTIONS)
-            st.date_input("Date input")
-            st.text_input("Text input (default)", type="default")
-        with col2:
-            st.toggle("Toggle")
-            st.multiselect("Multiselect", OPTIONS)
-            st.slider("Slider")
-            st.time_input("Time input")
-            st.text_input("Text input (password)", type="password")
-        st.text_area("Text area")
-        st.color_picker("Colour picker")
-        st.file_uploader("File uploader")
-
-        submitted = st.form_submit_button("Form submit button", type="primary")
-        if submitted:
-            st.json(st.session_state)
-
-with tab4:
-    st.success("Success", icon=":material/check_circle:")
-    st.info("Info", icon=":material/info:")
-    st.warning("Warning", icon=":material/warning:")
-    st.error("Error", icon=":material/error:")
-
-with tab5:
     st.subheader("Stats Cards")
     col1, col2 = st.columns(2)
     with col1:
         code = """
-        st_undp.stats_card(
-            value=3.14,
-            title="Pi",
-            text="Pi is a mathematical constant that is the ratio of a circle's circumference to its diameter",
-        )
-        """
+            st_undp.stats_card(
+                value=3.14,
+                title="Pi",
+                text="Pi is a mathematical constant that is the ratio of a circle's circumference to its diameter",
+            )
+            """
         eval(code.strip())
         with st.expander("Show Code"):
             st.code(code)
     with col2:
         code = """
-        st_undp.stats_card(
-            value=2.71,
-            title="Euler's constant",
-            text="Euler's constant is  is a mathematical constant, defined as the limiting difference between the harmonic series and the natural logarithm",
-        )
-        """
+            st_undp.stats_card(
+                value=2.71,
+                title="Euler's constant",
+                text="Euler's constant is  is a mathematical constant, defined as the limiting difference between the harmonic series and the natural logarithm",
+            )
+            """
         eval(code.strip())
         with st.expander("Show Code"):
             st.code(code)
 
-with tab6:
-    title = st.text_input("Header Title", value="Data Futures \A Exchange")
-    name = st.radio("Name", ("UNDP", "PNUD"), horizontal=True)
-    colour = st.radio("Colour", ("Blue", "White"), horizontal=True)
-    if colour.lower() == "white":
-        message = """The white logo is not visible in the light theme. 
-        Change the theme to dark to verify it is there. 
-        However, the dark theme is discouraged in production as the styling is specifically designed for the light theme."""
-        st.info(message, icon=":material/lightbulb:")
-    code = f"""st_undp.logo(name="{name.lower()}", title="{title}", colour="{colour.lower()}")"""
-    with st.expander("Show Code"):
-        st.code(code)
-    eval(code)
-
-with tab7:
-    if st.toggle("Sidebar"):
-        with st.sidebar:
-            st.subheader("Sidebar Title")
-            with st.container():
-                st.info("There could be your content.", icon=":material/lightbulb:")
-
-with tab8:
+with tab4:
     body = "Make sure to call the footer function at the bottom of your script outside of any tab, column etc."
     st.info(body, icon=":material/lightbulb:")
     footer = st.radio(
@@ -162,5 +113,54 @@ with tab8:
         code = "None"
     with st.expander("Show Code"):
         st.code(code)
+    eval(code)
 
-eval(code)
+with tab5:
+    with st.form("form"):
+        st.radio("Radio", OPTIONS, horizontal=True)
+        st.number_input("Number input")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.checkbox("Checkbox")
+            st.selectbox("Selectbox", OPTIONS)
+            st.select_slider("Slider", OPTIONS)
+            st.date_input("Date input")
+            st.text_input("Text input (default)", type="default")
+        with col2:
+            st.toggle("Toggle")
+            st.multiselect("Multiselect", OPTIONS)
+            st.slider("Slider")
+            st.time_input("Time input")
+            st.text_input("Text input (password)", type="password")
+        st.text_area("Text area")
+        st.color_picker("Colour picker")
+        st.file_uploader("File uploader")
+
+        submitted = st.form_submit_button("Form submit button", type="primary")
+        if submitted:
+            st.json(st.session_state)
+
+with tab6:
+    title = st.text_input("Header Title", value="Data Futures \A Exchange")
+    name = st.radio("Name", ("UNDP", "PNUD"), horizontal=True)
+    colour = st.radio("Colour", ("Blue", "White"), horizontal=True)
+    if colour.lower() == "white":
+        message = """The white logo is not visible in the light theme. 
+        Change the theme to dark to verify it is there. 
+        However, the dark theme is discouraged in production as the styling is specifically designed for the light theme."""
+        st.info(message, icon=":material/lightbulb:")
+    code = f"""st_undp.logo(name="{name.lower()}", title="{title}", colour="{colour.lower()}")"""
+    with st.expander("Show Code"):
+        st.code(code)
+    eval(code)
+
+with tab7:
+    if st.toggle("Sidebar"):
+        with st.sidebar:
+            st.subheader("Sidebar Title")
+            with st.container():
+                st.info("There could be your content.", icon=":material/lightbulb:")
+
+with tab8:
+    st.markdown("Regular text with an [example link](https://data.undp.org).")
+    st.text("Do not use `st.text`. Its content will not be properly styled.")
