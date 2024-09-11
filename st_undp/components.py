@@ -19,8 +19,15 @@ env = Environment(loader=PackageLoader("st_undp"))
 def logo(
     name: Literal["undp", "pnud"] = "undp",
     colour: Literal["blue", "white"] = "blue",
+    title: str = r"Data Futures \A Exchange",
     link: str = "https://data.undp.org",
 ):
+    css = f"""
+    a[data-testid="stLogoLink"]::after {{
+      content: "{title}";
+    }}
+    """
+    st.html(f"<style>{css}</style>")
     image = read_file(f"images/{name}-logo-{colour}.svg", "r")
     st.logo(image=image, link=link, icon_image=image)
 
