@@ -39,6 +39,9 @@ jobs:
         run: |
           poetry export -f requirements.txt -o requirements.txt --without-hashes
 
+      - name: Add .streamlit/config.toml
+        run: python -m st_undp configure
+
       - name: Upload artifact for deployment
         uses: actions/upload-artifact@v3
         with:
