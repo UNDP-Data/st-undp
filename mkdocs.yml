@@ -12,6 +12,7 @@ theme:
   features:
     - content.action.view
     - content.action.edit
+    - content.code.copy
 
 nav:
   - Home: index.md
