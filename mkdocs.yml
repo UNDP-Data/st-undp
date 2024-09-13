@@ -1,6 +1,25 @@
 site_name: st-undp
 site_url: https://undp-data.github.io/st-undp
+repo_url: https://github.com/undp-data/st-undp
+repo_name: undp-data/st-undp
+edit_uri: edit/main/docs/
 theme:
   name: material
+  logo: assets/images/logo.svg
+  favicon: assets/images/favicon.ico
+  icon:
+    repo: material/github
+    edit: material/pencil
+    view: material/eye
+  features:
+    - content.action.view
+    - content.action.edit
+extra:
+  social:
+    - icon: material/github
+      link: https://github.com/undp-data
+    - icon: material/web
+      link: https://data.undp.org
+copyright: Copyright &copy; 2024 United Nations Development Programme
 nav:
   - Home: index.md
