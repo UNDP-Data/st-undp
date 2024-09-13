@@ -21,5 +21,11 @@ extra:
     - icon: material/web
       link: https://data.undp.org
 copyright: Copyright &copy; 2024 United Nations Development Programme
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: numpy
 nav:
   - Home: index.md
