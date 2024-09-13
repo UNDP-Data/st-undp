@@ -33,6 +33,9 @@ extra:
     - icon: material/web
       link: https://data.undp.org
 
+markdown_extensions:
+  - pymdownx.superfences
+
 copyright: Copyright &copy; 2024 United Nations Development Programme
 
 repo_url: https://github.com/undp-data/st-undp
