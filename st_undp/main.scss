@@ -65,20 +65,20 @@ footer {
 
 @media (min-width: 48em) {
   .footer {
-      padding: 3.25rem 0 var(--undpds-spacing-09);
+    padding: 3.25rem 0 var(--undpds-spacing-09);
   }
   .footer-items {
-      flex-direction: row; 
+    flex-direction: row;
   }
 }
 
 @media (max-width: 48em) {
   .footer {
-      padding: var(--undpds-spacing-12) var(--undpds-spacing-12);
+    padding: var(--undpds-spacing-12) var(--undpds-spacing-12);
   }
   .footer-logo {
-      flex-direction: column;
-      vertical-align: center;
+    flex-direction: column;
+    vertical-align: center;
   }
   .footer-items {
     margin: 1rem 0 0;
