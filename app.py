@@ -52,6 +52,19 @@ with tab2:
             st.write(f"Clicked: {clicked}")
 
 with tab3:
+    st.subheader("Author")
+    code = """
+    st_undp.author(
+        src="app/static/aristotle.jpg",
+        name="Aristotle",
+        title="Ancient Greek philosopher and polymath",
+        href="https://en.wikipedia.org/wiki/Aristotle",
+    )
+    """
+    eval(code.strip())
+    with st.expander("Show Code"):
+        st.code(code)
+
     st.subheader("Stats Cards")
     col1, col2 = st.columns(2)
     with col1:
