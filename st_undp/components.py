@@ -18,6 +18,7 @@ __all__ = [
     "author_summary",
     "content_card",
     "download_card",
+    "featured_card",
     "stats_card",
 ]
 
@@ -112,6 +113,20 @@ def download_card(
         image = ""
     template = env.get_template("download-card.html")
     body = template.render(title=title, format=format, image=image, href=href)
+    st.html(body)
+
+
+def featured_card(
+    src: str,
+    title: str,
+    summary: str,
+    href: str,
+    tag: str = "news",
+    width: int = 12,
+):
+    kwargs = locals()
+    template = env.get_template("featured-card.html")
+    body = template.render(**kwargs)
     st.html(body)
 
 
