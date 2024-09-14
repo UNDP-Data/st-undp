@@ -65,6 +65,19 @@ with tab3:
     with st.expander("Show Code"):
         st.code(code)
 
+    st.subheader("Author Summary")
+    code = f"""
+    st_undp.author_summary(
+        src="app/static/aristotle.jpg",
+        name="Aristotle",
+        title="Ancient Greek philosopher and polymath",
+        summary="As the founder of the Peripatetic school of philosophy in the Lyceum in Athens, he began the wider Aristotelian tradition that followed, which set the groundwork for the development of modern science."
+    )
+    """
+    eval(code.strip())
+    with st.expander("Show Code"):
+        st.code(code)
+
     st.subheader("Stats Cards")
     col1, col2 = st.columns(2)
     with col1:
