@@ -92,6 +92,27 @@ with tab3:
     with st.expander("Show Code"):
         st.code(code)
 
+    st.subheader("Content Card")
+    body = "Use st.columns to arrange multiple cards in a row."
+    st.info(body, icon=":material/lightbulb:")
+    code = f"""
+    st_undp.content_card(
+        src="app/static/aristotle.jpg",
+        caption="Nicomachean Ethics is closely related to Eudemian Ethics",
+        href="https://en.wikipedia.org/wiki/Nicomachean_Ethics",
+        tag="announcement",
+    )
+    """.strip()
+    col1, col2 = st.columns(2)
+    rows = col1.slider("Rows", min_value=1, max_value=5, value=2)
+    cols = col2.slider("Columns", min_value=2, max_value=5, value=4)
+    for _ in range(rows):
+        for col in st.columns(cols):
+            with col:
+                eval(code)
+    with st.expander("Show Code"):
+        st.code(code)
+
     st.subheader("Stats Cards")
     col1, col2 = st.columns(2)
     with col1:
