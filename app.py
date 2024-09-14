@@ -143,6 +143,19 @@ with tab3:
     with st.expander("Show Code"):
         st.code(code)
 
+    st.subheader("Image Card")
+    code = """
+    st_undp.image_card(
+       src="app/static/aristotle.jpg",
+       summary="Nicomachean Ethics is Aristotle's best-known works on ethics: the science of the good for human life, that which is the goal or end at which all our actions aim",
+       href="https://en.wikipedia.org/wiki/Nicomachean_Ethics",
+       width=3,
+    )
+    """.strip()
+    eval(code)
+    with st.expander("Show Code"):
+        st.code(code)
+
     st.subheader("Stats Cards")
     col1, col2 = st.columns(2)
     with col1:
