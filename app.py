@@ -113,6 +113,22 @@ with tab3:
     with st.expander("Show Code"):
         st.code(code)
 
+    st.subheader("Download Card")
+    code = """
+    st_undp.download_card(
+        src="app/static/aristotle.jpg",
+        title="Corpus Aristotelicum",
+        format="PDF (1.5MB)",
+        href="https://en.wikipedia.org/wiki/Works_of_Aristotle",
+        variant="{}",
+    )
+    """.strip()
+    for col, variant in zip(st.columns(3), ("publication", "card", "default")):
+        with col:
+            eval(code.format(variant))
+            with st.expander("Show Code"):
+                st.code(code.format(variant))
+
     st.subheader("Stats Cards")
     col1, col2 = st.columns(2)
     with col1:
