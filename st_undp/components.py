@@ -10,7 +10,7 @@ from jinja2 import Environment, PackageLoader
 
 from .utils import read_file
 
-__all__ = ["footer", "logo", "stats_card"]
+__all__ = ["logo", "footer", "author", "stats_card"]
 
 
 env = Environment(loader=PackageLoader("st_undp"))
@@ -52,6 +52,13 @@ def footer(columns: Literal["dfx", "default"] | dict[str, dict[str, str]] = "def
 def __footer_item(id: int, title: str, pages: dict) -> str:
     template = env.get_template("footer-item.html")
     return template.render(id=id, title=title, pages=pages)
+
+
+def author(src: str, name: str, title: str, href: str) -> None:
+    kwargs = locals()
+    template = env.get_template("author.html")
+    body = template.render(**kwargs)
+    st.html(body)
 
 
 def stats_card(value: int | float | str, title: str, text: str = "") -> None:
