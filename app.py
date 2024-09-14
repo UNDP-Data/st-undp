@@ -65,6 +65,20 @@ with tab3:
     with st.expander("Show Code"):
         st.code(code)
 
+    st.subheader("Author Card")
+    code = """
+    st_undp.author_card(
+        src="app/static/aristotle.jpg",
+        name="Aristotle",
+        title="Ancient Greek philosopher and polymath",
+        summary="His writings cover a broad range of subjects spanning the natural sciences, philosophy, linguistics, economics, politics, psychology, and the arts.",
+        href="https://en.wikipedia.org/wiki/Aristotle",
+    )
+    """
+    eval(code.strip())
+    with st.expander("Show Code"):
+        st.code(code)
+
     st.subheader("Author Summary")
     code = f"""
     st_undp.author_summary(
