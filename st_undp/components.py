@@ -17,6 +17,7 @@ __all__ = [
     "author_card",
     "author_summary",
     "content_card",
+    "download_card",
     "stats_card",
 ]
 
@@ -94,6 +95,23 @@ def content_card(src: str, caption: str, href: str, tag: str = "news", width: in
     kwargs = locals()
     template = env.get_template("content-card.html")
     body = template.render(**kwargs)
+    st.html(body)
+
+
+def download_card(
+    src: str | None,
+    title: str,
+    format: str,
+    href: str,
+    variant: Literal["publication", "card", "default"] = "default",
+):
+    if variant != "default":
+        template = env.get_template("download-card-image.html")
+        image = template.render(src=src, variant=variant)
+    else:
+        image = ""
+    template = env.get_template("download-card.html")
+    body = template.render(title=title, format=format, image=image, href=href)
     st.html(body)
 
 
