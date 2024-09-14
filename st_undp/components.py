@@ -10,7 +10,7 @@ from jinja2 import Environment, PackageLoader
 
 from .utils import read_file
 
-__all__ = ["logo", "footer", "author", "stats_card"]
+__all__ = ["logo", "footer", "author", "author_summary", "stats_card"]
 
 
 env = Environment(loader=PackageLoader("st_undp"))
@@ -58,6 +58,12 @@ def author(src: str, name: str, title: str, href: str) -> None:
     kwargs = locals()
     template = env.get_template("author.html")
     body = template.render(**kwargs)
+    st.html(body)
+
+
+def author_summary(src: str, name: str, title: str, summary: str):
+    template = env.get_template("author-summary.html")
+    body = template.render(src=src, name=name, title=title, summary=summary)
     st.html(body)
 
 
