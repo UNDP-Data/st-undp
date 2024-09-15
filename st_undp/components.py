@@ -52,17 +52,17 @@ def footer(columns: Literal["dfx", "default"] | dict[str, dict[str, str]] = "def
     else:
         raise ValueError("Columns must one of 'dfx', 'default', or a mapping.")
     items = []
-    for index, (title, pages) in enumerate(columns.items(), start=1):
-        item = __footer_item(id=index, title=title, pages=pages)
+    for title, pages in columns.items():
+        item = __footer_item(title=title, pages=pages)
         items.append(item)
     template = env.get_template("footer.html")
     body = template.render(items=items)
     st.html(body)
 
 
-def __footer_item(id: int, title: str, pages: dict) -> str:
+def __footer_item(title: str, pages: dict) -> str:
     template = env.get_template("footer-item.html")
-    return template.render(id=id, title=title, pages=pages)
+    return template.render(title=title, pages=pages)
 
 
 def author(src: str, name: str, title: str, href: str) -> None:

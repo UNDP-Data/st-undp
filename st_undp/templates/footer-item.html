@@ -9,15 +9,15 @@
     >
         {{ title }}
     </button>
-    <div
-            id="footer-panel-{{ id }}"
-            class="footer-panel desktop-visible"
-            aria-label="footer-item-{{ id }}"
-            aria-hidden="false"
-            role="region"
-    >
-        {% for title, href in pages.items() %}
+    {% for title, href in pages.items() %}
+        <div
+                id="footer-panel-{{ loop.index }}"
+                class="footer-panel desktop-visible"
+                aria-label="footer-item-{{ loop.index }}"
+                aria-hidden="false"
+                role="region"
+        >
             <a href="{{ href }}" title="{{ title }}">{{ title }}</a>
-        {% endfor %}
-    </div>
+        </div>
+    {% endfor %}
 </div>
