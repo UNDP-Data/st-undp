@@ -181,7 +181,7 @@ with tab3:
     title = st.text_input("Header Title", key="title")
     subtitle = st.text_input("Header Subtitle", key="subtitle")
     code = f"""
-    st_undp(
+    st_undp.header(
         title="{title}",
         subtitle="{subtitle}",
         logo="{logo}",
