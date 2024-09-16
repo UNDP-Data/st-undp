@@ -60,6 +60,13 @@ with tab4:
             st.subheader("Sidebar Title")
             with st.container():
                 st.info("There could be your content.", icon=":material/lightbulb:")
+                search = st.text_input("Search")
+                tags = st.multiselect("Tags", OPTIONS)
+                clicked = st.button("Search", type="primary")
+        if clicked:
+            st.subheader("Search Parameters")
+            st.json({"search": search, "tags": tags})
+
 
 with tab5:
     st.title("Title")
