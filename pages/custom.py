@@ -153,7 +153,7 @@ with tab8:
     st_undp.header(
         title="{title}",
         subtitle="{subtitle}",
-        logo="{logo}",
+        logo="{logo.lower()}",
     )
     """.strip()
     with st.expander("Show Code"):

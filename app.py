@@ -31,7 +31,7 @@ st_undp.header(
         "standard components": "./",
         "custom components": "./custom",
     },
-    logo=st.session_state.logo,
+    logo=st.session_state.logo.lower(),
 )
 
 pg = st.navigation(
