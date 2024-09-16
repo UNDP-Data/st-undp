@@ -1,5 +1,9 @@
 # st-undp
 
+[![Build and deploy Python app to Azure Web App](https://github.com/undp-data/st-undp/actions/workflows/azure-webapps-python.yml/badge.svg)](https://github.com/undp-data/st-undp/actions/workflows/azure-webapps-python.yml)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/release/python-3110/)
+[![License](https://img.shields.io/github/license/undp-data/st-undp)](https://github.com/undp-data/st-undp/blob/main/LICENSE)
+
 A utility package that styles Streamlit apps according to [UNDP Design System](https://design.undp.org).
 
 ## Table of Contents
