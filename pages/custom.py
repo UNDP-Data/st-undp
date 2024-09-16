@@ -4,15 +4,21 @@ import st_undp
 
 OPTIONS = list("ABCDE")
 
-tab1, tab2, tab3 = st.tabs(
+tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10 = st.tabs(
     [
-        "Custom Components",
+        "Author",
+        "Author Card",
+        "Author Summary",
+        "Content Card",
+        "Download Card",
+        "Featured Card",
         "Footer",
         "Header",
+        "Image Card",
+        "Stats Card",
     ]
 )
 with tab1:
-    st.subheader("Author")
     code = """
     st_undp.author(
         src="app/static/aristotle.jpg",
@@ -25,7 +31,7 @@ with tab1:
     with st.expander("Show Code"):
         st.code(code)
 
-    st.subheader("Author Card")
+with tab2:
     code = """
     st_undp.author_card(
         src="app/static/aristotle.jpg",
@@ -39,7 +45,7 @@ with tab1:
     with st.expander("Show Code"):
         st.code(code)
 
-    st.subheader("Author Summary")
+with tab3:
     code = f"""
     st_undp.author_summary(
         src="app/static/aristotle.jpg",
@@ -52,6 +58,7 @@ with tab1:
     with st.expander("Show Code"):
         st.code(code)
 
+with tab4:
     st.subheader("Content Card")
     body = "Use st.columns to arrange multiple cards in a row."
     st.info(body, icon=":material/lightbulb:")
@@ -73,7 +80,7 @@ with tab1:
     with st.expander("Show Code"):
         st.code(code)
 
-    st.subheader("Download Card")
+with tab5:
     code = """
     st_undp.download_card(
         src="app/static/aristotle.jpg",
@@ -89,7 +96,7 @@ with tab1:
             with st.expander("Show Code"):
                 st.code(code.format(variant))
 
-    st.subheader("Featured Card")
+with tab6:
     code = """
     st_undp.featured_card(
        src="app/static/aristotle.jpg",
@@ -103,45 +110,7 @@ with tab1:
     with st.expander("Show Code"):
         st.code(code)
 
-    st.subheader("Image Card")
-    code = """
-    st_undp.image_card(
-       src="app/static/aristotle.jpg",
-       summary="Nicomachean Ethics is Aristotle's best-known works on ethics: the science of the good for human life, that which is the goal or end at which all our actions aim",
-       href="https://en.wikipedia.org/wiki/Nicomachean_Ethics",
-       width=3,
-    )
-    """.strip()
-    eval(code)
-    with st.expander("Show Code"):
-        st.code(code)
-
-    st.subheader("Stats Cards")
-    col1, col2 = st.columns(2)
-    with col1:
-        code = """
-            st_undp.stats_card(
-                value=3.14,
-                title="Pi",
-                text="Pi is a mathematical constant that is the ratio of a circle's circumference to its diameter",
-            )
-            """
-        eval(code.strip())
-        with st.expander("Show Code"):
-            st.code(code)
-    with col2:
-        code = """
-            st_undp.stats_card(
-                value=2.71,
-                title="Euler's constant",
-                text="Euler's constant is  is a mathematical constant, defined as the limiting difference between the harmonic series and the natural logarithm",
-            )
-            """
-        eval(code.strip())
-        with st.expander("Show Code"):
-            st.code(code)
-
-with tab2:
+with tab7:
     body = "Make sure to call the footer function at the bottom of your script outside of any tab, column etc."
     st.info(body, icon=":material/lightbulb:")
     footer = st.radio(
@@ -176,7 +145,7 @@ with tab2:
         st.code(code)
     eval(code)
 
-with tab3:
+with tab8:
     logo = st.radio("Logo", ("UNDP", "PNUD"), key="logo", horizontal=True)
     title = st.text_input("Header Title", key="title")
     subtitle = st.text_input("Header Subtitle", key="subtitle")
@@ -189,3 +158,41 @@ with tab3:
     """.strip()
     with st.expander("Show Code"):
         st.code(code)
+
+with tab9:
+    code = """
+    st_undp.image_card(
+       src="app/static/aristotle.jpg",
+       summary="Nicomachean Ethics is Aristotle's best-known works on ethics: the science of the good for human life, that which is the goal or end at which all our actions aim",
+       href="https://en.wikipedia.org/wiki/Nicomachean_Ethics",
+       width=3,
+    )
+    """.strip()
+    eval(code)
+    with st.expander("Show Code"):
+        st.code(code)
+
+with tab10:
+    col1, col2 = st.columns(2)
+    with col1:
+        code = """
+            st_undp.stats_card(
+                value=3.14,
+                title="Pi",
+                text="Pi is a mathematical constant that is the ratio of a circle's circumference to its diameter",
+            )
+            """
+        eval(code.strip())
+        with st.expander("Show Code"):
+            st.code(code)
+    with col2:
+        code = """
+            st_undp.stats_card(
+                value=2.71,
+                title="Euler's constant",
+                text="Euler's constant is  is a mathematical constant, defined as the limiting difference between the harmonic series and the natural logarithm",
+            )
+            """
+        eval(code.strip())
+        with st.expander("Show Code"):
+            st.code(code)
