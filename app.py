@@ -19,6 +19,23 @@ st_undp.set_page_config(
 
 st_undp.apply_style()
 
+# initialise states
+if st.session_state.get("title") is None:
+    st.session_state["title"] = "Data Futures Exchange"
+    st.session_state["subtitle"] = "st-undp Application"
+    st.session_state["logo"] = "UNDP"
+
+# configure the header
+st_undp.header(
+    title=st.session_state.title,
+    subtitle=st.session_state.subtitle,
+    pages={
+        "who we are": "https://www.undp.org/about-us",
+        "what we do": "https://www.undp.org/expertise",
+        "get involved": "https://www.undp.org/contact-us",
+    },
+    logo=st.session_state.logo,
+)
 st.title("Title")
 st.header("Header")
 st.subheader("Subheader")
@@ -30,7 +47,7 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs(
         "Custom Components",
         "Footer",
         "Forms",
-        "Logo",
+        "Header",
         "Sidebar",
         "Text",
     ]
@@ -242,18 +259,18 @@ with tab5:
             st.json(st.session_state)
 
 with tab6:
-    title = st.text_input("Header Title", value="Data Futures \A Exchange")
-    name = st.radio("Name", ("UNDP", "PNUD"), horizontal=True)
-    colour = st.radio("Colour", ("Blue", "White"), horizontal=True)
-    if colour.lower() == "white":
-        message = """The white logo is not visible in the light theme. 
-        Change the theme to dark to verify it is there. 
-        However, the dark theme is discouraged in production as the styling is specifically designed for the light theme."""
-        st.info(message, icon=":material/lightbulb:")
-    code = f"""st_undp.logo(name="{name.lower()}", title="{title}", colour="{colour.lower()}")"""
+    logo = st.radio("Logo", ("UNDP", "PNUD"), key="logo", horizontal=True)
+    title = st.text_input("Header Title", key="title")
+    subtitle = st.text_input("Header Subtitle", key="subtitle")
+    code = f"""
+    st_undp(
+        title="{title}",
+        subtitle="{subtitle}",
+        logo="{logo}",
+    )
+    """.strip()
     with st.expander("Show Code"):
         st.code(code)
-    eval(code)
 
 with tab7:
     if st.toggle("Sidebar"):
