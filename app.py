@@ -36,9 +36,6 @@ st_undp.header(
     },
     logo=st.session_state.logo,
 )
-st.title("Title")
-st.header("Header")
-st.subheader("Subheader")
 
 tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs(
     [
@@ -280,5 +277,8 @@ with tab7:
                 st.info("There could be your content.", icon=":material/lightbulb:")
 
 with tab8:
+    st.title("Title")
+    st.header("Header")
+    st.subheader("Subheader")
     st.markdown("Regular text with an [example link](https://data.undp.org).")
     st.text("Do not use `st.text`. Its content will not be properly styled.")
