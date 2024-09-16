@@ -12,6 +12,16 @@
 @import url("https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/download-card.min.css");
 @import url("https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/featured-content-card.min.css");
 @import url("https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-revel-cta-card.min.css");
+@import url("https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/country-site-header.min.css");
+@import url("https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css");
+@import url("https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css");
+@import url("https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css");
+@import url("https://cdn.jsdelivr.net/npm/@undp/design-system/docs//css/components/mobile-nav.min.css");
+@import url("https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu-overflow.min.css");
+
+:root {
+  --sidebar-margin: 7rem;
+}
 
 /* Font settings */
 html,
@@ -27,42 +37,36 @@ span {
   font-family: "proxima-nova", sans-serif;
 }
 
-/* Logo, the second selector applies when there is no sidebar */
+/* Logo, hide built-in logo elements not to conflict with the custom header */
 img.stLogo,
 img[data-testid="stLogo"] {
-  height: 6.7em;
-  position: relative;
-  margin-top: -1.3em;
-  margin-left: -0.7em;
+  display: none;
 }
 
 header[data-testid="stHeader"] {
-  height: 7.2rem;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, .1);
+  display: none;
 }
 
 a[data-testid="stLogoLink"] {
-  text-decoration: none;
-  background-image: none;
+  display: none;
 }
 
-a[data-testid="stLogoLink"]::after {
-  font-size: 18px;
-  margin-top: 10px;
-  margin-left: 18px;
-  color: var(--gray-600);
-  position: absolute;
-  white-space: pre;
+/* Sidebar, offset from the header and remove background to seamlessly blend in */
+section.stSidebar {
+  margin-top: var(--sidebar-margin);
+  background-color: transparent;
 }
 
-/* The first h1 on page*/
-div.stHeading h1:first-of-type {
-  padding-top: 40px;
-}
-
-/* Sidebar open/collapse button */
+/* Sidebar button, align offset when opened and closed */
 button[data-testid="stBaseButton-headerNoPadding"] {
-  margin-top: 5em;
+  height: 5rem;
+  margin-top: 50rem;
+}
+
+/* offset by the same margin to align collapsed and opened icons */
+section.stSidebar[aria-expanded="true"] button[data-testid="stBaseButton-headerNoPadding"] {
+  margin-top: calc(50rem - var(--sidebar-margin));
+  position: absolute;
 }
 
 /* Footer */

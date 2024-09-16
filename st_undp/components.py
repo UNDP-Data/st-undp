@@ -3,6 +3,7 @@ Static HTML components in UNDP style.
 """
 
 import json
+from base64 import b64encode
 from typing import Literal
 
 import streamlit as st
@@ -11,7 +12,7 @@ from jinja2 import Environment, PackageLoader
 from .utils import read_file
 
 __all__ = [
-    "logo",
+    "header",
     "footer",
     "author",
     "author_card",
@@ -27,20 +28,26 @@ __all__ = [
 env = Environment(loader=PackageLoader("st_undp"))
 
 
-def logo(
-    name: Literal["undp", "pnud"] = "undp",
-    colour: Literal["blue", "white"] = "blue",
-    title: str = r"Data Futures \A Exchange",
-    link: str = "https://data.undp.org",
+def header(
+    title: str,
+    subtitle: str,
+    title_href: str | None = None,
+    subtitle_href: str | None = None,
+    pages: dict | None = None,
+    logo: Literal["undp", "pnud"] = "undp",
 ):
-    css = f"""
-    a[data-testid="stLogoLink"]::after {{
-      content: "{title}";
-    }}
-    """
-    st.html(f"<style>{css}</style>")
-    image = read_file(f"images/{name}-logo-{colour}.svg", "r")
-    st.logo(image=image, link=link, icon_image=image)
+    kwargs = locals()
+    # read the logo image
+    image = read_file(f"images/{logo}-logo-blue.svg", "r")
+    data = b64encode(image.encode("utf-8")).decode("utf-8")
+
+    # update the variable as needed
+    kwargs["pages"] = kwargs["pages"] or {}
+    kwargs["logo"] = f"data:image/svg+xml;base64,{data}"
+
+    template = env.get_template("header.html")
+    body = template.render(**kwargs)
+    st.html(body)
 
 
 def footer(columns: Literal["dfx", "default"] | dict[str, dict[str, str]] = "default"):

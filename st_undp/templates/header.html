@@ -1,0 +1,31 @@
+<header class="country-header">
+  <section class="header">
+    <div class="grid-container fluid">
+      <div class="grid-x grid-margin-x align-content-middle">
+        <div class="cell small-8 large-2 shrink align-self-middle top-left">
+          <a href="https://undp.org" class="logo" tabindex="0" title="UNDP Logo homepage link">
+            <img
+              src="{{ logo }}"
+              alt="UNDP Logo"
+            />
+          </a>
+          <div class="site-title">
+            <span><a href="{{ title_href }}" title="{{ title }}">{{ title }}</a></span>
+            <span><a href="{{ subtitle_href }}" title="{{ subtitle }}">{{ subtitle }}</a></span>
+          </div>
+        </div>
+        <div class="cell small-1 large-auto align-content-middle top-center">
+          <nav class="menu">
+            <ul class="">
+              {% for title, href in pages.items() %}
+                  <li data-menu-id="headerlink{{ loop.index }}">
+                    <a href="{{ href }}" tabindex="0">{{ title }}</a>
+                  </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
