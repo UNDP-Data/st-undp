@@ -20,7 +20,7 @@ def apply_style():
 
 
 def set_page_config(title: str, menu_items: dict):
-    image = read_file(f"images/favicon.ico", "rb")
+    image = read_file("images/favicon.ico", "rb")
     st.set_page_config(
         page_title=title,
         page_icon=BytesIO(image),
