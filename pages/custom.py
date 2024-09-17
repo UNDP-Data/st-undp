@@ -62,11 +62,11 @@ with tab3:
 with tab4:
     code = """
         st_undp.breadcrumb([
-            {'label': 'Home', 'url': '/'},
-            {'label': 'Custom components', 'url': '/custom'},
-            {'label': 'Breadcrumb', 'url': None}
+            {'Home': '/'},
+            {'Custom components': '/custom'},
+            {'Breadcrumb': None}
         ])
-        """
+    """
     eval(code.strip())
     with st.expander("Show Code"):
         st.code(code)
