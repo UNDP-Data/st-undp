@@ -79,7 +79,7 @@ h5,
 h6,
 p,
 span {
-  font-family: "proxima-nova", sans-serif;
+  font-family: var(--fontFamily);
 }
 
 /* Logo, hide built-in logo elements not to conflict with the custom header */
@@ -372,12 +372,8 @@ div[data-testid="stHeadingWithActionElements"] > h1 {
 }
 
 @media (max-width: 48em) {
-  .stats-card-smaller.small h2 {
+  .stat-card-smaller.small h2 {
     font-size: 4.375rem;
-  }
-
-  .stats-card.small h3 {
-    font-size: 3.5rem;
   }
 }
 
