@@ -105,6 +105,16 @@ a[data-testid="stLogoLink"] {
   text-decoration: none;
 }
 
+.country-header .header .menu a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.country-header .header .menu a:hover {
+  text-decoration: none;
+  color: var(--gray-600);
+}
+
 /* Sidebar, offset from the header and remove background to seamlessly blend in */
 section.stSidebar {
   margin-top: var(--sidebar-margin);
