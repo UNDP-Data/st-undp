@@ -4,11 +4,12 @@ import st_undp
 
 OPTIONS = list("ABCDE")
 
-tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10 = st.tabs(
+tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11 = st.tabs(
     [
         "Author",
         "Author Card",
         "Author Summary",
+        "Breadcrumb",
         "Content Card",
         "Download Card",
         "Featured Card",
@@ -46,7 +47,7 @@ with tab2:
         st.code(code)
 
 with tab3:
-    code = f"""
+    code = """
     st_undp.author_summary(
         src="app/static/aristotle.jpg",
         name="Aristotle",
@@ -59,10 +60,22 @@ with tab3:
         st.code(code)
 
 with tab4:
+    code = """
+        st_undp.breadcrumb([
+            {'label': 'Home', 'url': '/'},
+            {'label': 'Custom components', 'url': '/custom'},
+            {'label': 'Breadcrumb', 'url': None}
+        ])
+        """
+    eval(code.strip())
+    with st.expander("Show Code"):
+        st.code(code)
+
+with tab5:
     st.subheader("Content Card")
     body = "Use st.columns to arrange multiple cards in a row."
     st.info(body, icon=":material/lightbulb:")
-    code = f"""
+    code = """
     st_undp.content_card(
         src="app/static/aristotle.jpg",
         caption="Nicomachean Ethics is closely related to Eudemian Ethics",
@@ -80,7 +93,7 @@ with tab4:
     with st.expander("Show Code"):
         st.code(code)
 
-with tab5:
+with tab6:
     code = """
     st_undp.download_card(
         src="app/static/aristotle.jpg",
@@ -96,7 +109,7 @@ with tab5:
             with st.expander("Show Code"):
                 st.code(code.format(variant))
 
-with tab6:
+with tab7:
     code = """
     st_undp.featured_card(
        src="app/static/aristotle.jpg",
@@ -110,7 +123,7 @@ with tab6:
     with st.expander("Show Code"):
         st.code(code)
 
-with tab7:
+with tab8:
     body = "Make sure to call the footer function at the bottom of your script outside of any tab, column etc."
     st.info(body, icon=":material/lightbulb:")
     footer = st.radio(
@@ -145,7 +158,7 @@ with tab7:
         st.code(code)
     eval(code)
 
-with tab8:
+with tab9:
     logo = st.radio("Logo", ("UNDP", "PNUD"), key="logo", horizontal=True)
     title = st.text_input("Header Title", key="title")
     subtitle = st.text_input("Header Subtitle", key="subtitle")
@@ -159,7 +172,7 @@ with tab8:
     with st.expander("Show Code"):
         st.code(code)
 
-with tab9:
+with tab10:
     code = """
     st_undp.image_card(
        src="app/static/aristotle.jpg",
@@ -172,7 +185,7 @@ with tab9:
     with st.expander("Show Code"):
         st.code(code)
 
-with tab10:
+with tab11:
     col1, col2 = st.columns(2)
     with col1:
         code = """
