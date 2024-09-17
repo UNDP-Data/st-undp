@@ -92,6 +92,11 @@ header[data-testid="stHeader"] {
   display: none;
 }
 
+a:hover {
+  text-decoration: none;
+  color: var(--gray-700);
+}
+
 a[data-testid="stLogoLink"] {
   display: none;
 }
