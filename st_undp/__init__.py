@@ -10,16 +10,21 @@ from .components import *
 from .utils import read_file
 
 
-def apply_style():
+def apply_style(title: str = "UNDP") -> None:
     """
-    Apply the CSS rules based on [UNDP Design System](https://design.undp.org).
-    """
-    css = read_file("main.scss")
-    body = f"<style>{css}</style>"
-    st.html(body)
+    Apply the styling based on UNDP Design System, including
+    CSS rules and favicon.
 
 
-def set_page_config(title: str):
+    Parameters
+    ----------
+    title : str, optional
+        The page title, shown in the browser tab.
+
+    Returns
+    -------
+    None.
+    """
     image = read_file("images/favicon.ico", "rb")
     st.set_page_config(
         page_title=title,
@@ -27,3 +32,6 @@ def set_page_config(title: str):
         layout="wide",
         initial_sidebar_state="auto",
     )
+    css = read_file("main.scss")
+    body = f"<style>{css}</style>"
+    st.html(body)
