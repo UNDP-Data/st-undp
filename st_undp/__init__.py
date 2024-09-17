@@ -19,12 +19,11 @@ def apply_style():
     st.html(body)
 
 
-def set_page_config(title: str, menu_items: dict):
+def set_page_config(title: str):
     image = read_file("images/favicon.ico", "rb")
     st.set_page_config(
         page_title=title,
         page_icon=BytesIO(image),
         layout="wide",
         initial_sidebar_state="auto",
-        menu_items=menu_items,
     )
