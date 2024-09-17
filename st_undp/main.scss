@@ -225,7 +225,87 @@ div[data-testid="stHeadingWithActionElements"] > h1 {
   padding-top: 20px;
 }
 
-/* Stat card smaller styling */
+/* Custom component - Breadcrumb */
+.undp-breadcrumb {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.undp-breadcrumb-light {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.undp-breadcrumb a {
+  background: none;
+  text-decoration: none;
+  color: var(--dark-red);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.undp-breadcrumb .divider {
+  background: none;
+  color: var(--dark-red);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.undp-breadcrumb a:hover {
+  color: var(--red);
+}
+
+.undp-breadcrumb span {
+  background: none;
+  color: var(--gray-700);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.undp-breadcrumb-light a {
+  background: none;
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+  text-decoration: none !important;
+}
+
+.undp-breadcrumb-light a:hover {
+  opacity: 0.7;
+}
+
+.undp-breadcrumb-light .divider {
+  background: none;
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  content: "/";
+}
+
+.undp-breadcrumb-light span {
+  background: none;
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* Custom component - Stat card smaller styling */
 .stat-card-smaller {
   padding: 1rem;
   flex-grow: 1;
