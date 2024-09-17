@@ -1,9 +1,9 @@
-<div class="undp-breadcrumb">
-  {% for item in items %} {% if item.url %}
-  <a href="{{ item.url }}">{{ item.label }}</a>
-  {% else %}
-  <span>{{ item.label }}</span>
-  {% endif %} {% if not loop.last %}
-  <div class="divider">/</div>
-  {% endif %} {% endfor %}
-</div>
+<nav class="breadcrumb">
+  <ul>
+    {% for item in items %} {% for label, url in item.items() %} {% if url %}
+    <li><a href="{{ url }}" aria-label="{{label}}">{{ label }}</a></li>
+    {% else %}
+    <li aria-current="{{label}}">{{ label }}</li>
+    {% endif %} {% endfor %} {% endfor %}
+  </ul>
+</nav>
