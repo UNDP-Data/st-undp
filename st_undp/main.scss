@@ -412,10 +412,13 @@ button[data-testid="stBaseButton-primaryFormSubmit"] {
 }
 
 /* Primary button styling */
-button[data-testid="stBaseButton-primary"],
-button[data-testid="stBaseButton-primaryFormSubmit"],
 button[data-testid="stBaseButton-primary"] > div > p,
 button[data-testid="stBaseButton-primaryFormSubmit"] > div > p {
+  color: white;
+}
+
+button[data-testid="stBaseButton-primary"],
+button[data-testid="stBaseButton-primaryFormSubmit"] {
   background-color: var(--dark-red);
   color: white;
 }
@@ -439,10 +442,13 @@ button[data-testid="stBaseButton-primaryFormSubmit"] > div > p:focus-visible {
 }
 
 /* Secondary button styling */
-button[data-testid="stBaseButton-secondary"],
-button[data-testid="stBaseButton-secondaryFormSubmit"],
 button[data-testid="stBaseButton-secondary"] > div > p,
 button[data-testid="stBaseButton-secondaryFormSubmit"] > div > p {
+  color: white;
+}
+
+button[data-testid="stBaseButton-secondary"],
+button[data-testid="stBaseButton-secondaryFormSubmit"] {
   background-color: var(--blue-600);
   color: white;
 }
@@ -452,11 +458,6 @@ button[data-testid="stBaseButton-secondary"] > div > p:hover,
 button[data-testid="stBaseButton-secondaryFormSubmit"]:hover,
 button[data-testid="stBaseButton-secondaryFormSubmit"] > div > p:hover,
 button[data-testid="baseButton-secondaryFormSubmit"]:hover {
-  background-color: var(--blue-500);
-  color: white;
-}
-
-button[data-testid="stBaseButton-secondary"] {
   background-color: var(--blue-500);
   color: white;
 }
