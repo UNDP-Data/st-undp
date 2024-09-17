@@ -1,5 +1,4 @@
 /* Import external stylesheets */
-@import url("https://undp-data.github.io/stylesheets-for-viz/style/mainStyleSheet.css");
 @import url("https://use.typekit.net/jtg8msg.css");
 @import url("https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css");
 @import url("https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css");
@@ -20,7 +19,53 @@
 @import url("https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu-overflow.min.css");
 
 :root {
+  --blue-100: #b5d5f5;
+  --blue-200: #94c4f5;
+  --blue-300: #6babeb;
+  --blue-400: #4f95dd;
+  --blue-500: #3288ce;
+  --blue-600: #006eb5;
+  --blue-700: #1f5a95;
+  --white: #fff;
+  --gray-100: #fafafa;
+  --gray-200: #f7f7f7;
+  --gray-300: #edeff0;
+  --gray-400: #d4d6d8;
+  --gray-500: #a9b1b7;
+  --gray-600: #55606e;
+  --gray-700: #232e3d;
+  --black: #000;
+  --light-yellow: #ffe17e;
+  --yellow: #ffeb00;
+  --dark-yellow: #fbc412;
+  --light-red: #ffbcb7;
+  --red: #ee402d;
+  --dark-red: #d12800;
+  --light-green: #b8ecb6;
+  --green: #6de354;
+  --dark-green: #59ba47;
+  --light-azure: #a2daf3;
+  --azure: #60d4f2;
+  --dark-azure: #00c1ff;
+  --spacing-00: 0;
+  --spacing-01: 0.125rem;
+  --spacing-02: 0.25rem;
+  --spacing-03: 0.5rem;
+  --spacing-04: 0.75rem;
+  --spacing-05: 1rem;
+  --spacing-06: 1.5rem;
+  --spacing-07: 2rem;
+  --spacing-08: 2.5rem;
+  --spacing-09: 3rem;
+  --spacing-10: 4rem;
+  --spacing-11: 5rem;
+  --spacing-12: 6rem;
+  --spacing-13: 7rem;
   --sidebar-margin: 7rem;
+  --fontFamily: "ProximaNova", "proxima-nova", "Helvetica Neue", "Roboto",
+    sans-serif;
+  --fontFamilyHeadings: "SohneBreit", "ProximaNova", "proxima-nova",
+    "Helvetica Neue", "Roboto", sans-serif;
 }
 
 /* Font settings */
@@ -64,7 +109,8 @@ button[data-testid="stBaseButton-headerNoPadding"] {
 }
 
 /* offset by the same margin to align collapsed and opened icons */
-section.stSidebar[aria-expanded="true"] button[data-testid="stBaseButton-headerNoPadding"] {
+section.stSidebar[aria-expanded="true"]
+  button[data-testid="stBaseButton-headerNoPadding"] {
   margin-top: calc(50rem - var(--sidebar-margin));
   position: absolute;
 }
@@ -107,7 +153,7 @@ code {
 div[data-testid="stMarkdownContainer"] a,
 div[data-testid="stMarkdownContainer"] > ul > li > a {
   background-image: linear-gradient(var(--dark-red), var(--dark-red)),
-  linear-gradient(var(--dark-red), var(--dark-red));
+    linear-gradient(var(--dark-red), var(--dark-red));
   background-position: 100% 100%, -30px 100%;
   background-repeat: no-repeat;
   background-size: 100% 2px, 0 1px;
@@ -307,9 +353,7 @@ button[data-testid="stBaseButton-secondary"] {
   color: white;
 }
 
-button[data-testid="stBaseButton-secondaryFormSubmit"]
-> div
-> p:focus-visible,
+button[data-testid="stBaseButton-secondaryFormSubmit"] > div > p:focus-visible,
 button[data-testid="baseButton-secondaryFormSubmit"]:focus-visible,
 button[data-testid="stBaseButton-secondaryFormSubmit"]:focus-visible,
 button[data-testid="stBaseButton-secondary"] > div > p:focus-visible,
@@ -343,7 +387,8 @@ div[data-testid="stMultiSelect"] > div > div > div {
 div[data-testid="stCheckbox"] > label > span {
   background-color: #ffffff;
   border-color: var(--dark-red);
-  background: url(https://design.undp.org/static/media/icon-check.b332b98d.svg) no-repeat center center;
+  background: url(https://design.undp.org/static/media/icon-check.b332b98d.svg)
+    no-repeat center center;
 }
 
 /* Accordion styling */
