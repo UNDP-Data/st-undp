@@ -34,7 +34,7 @@ def header(
     subtitle: str,
     title_href: str | None = None,
     subtitle_href: str | None = None,
-    pages: dict | None = None,
+    pages: list[st.Page] | None = None,
     logo: Literal["undp", "pnud"] = "undp",
 ):
     kwargs = locals()
@@ -43,7 +43,10 @@ def header(
     data = b64encode(image.encode("utf-8")).decode("utf-8")
 
     # update the variable as needed
-    kwargs["pages"] = kwargs["pages"] or {}
+    if kwargs["pages"]:
+        kwargs["pages"] = {page.title: page.url_path for page in kwargs["pages"]}
+    else:
+        kwargs["pages"] = {}
     kwargs["logo"] = f"data:image/svg+xml;base64,{data}"
 
     template = env.get_template("header.html")
