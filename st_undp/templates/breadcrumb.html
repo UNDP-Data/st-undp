@@ -1,0 +1,9 @@
+<div class="undp-breadcrumb">
+  {% for item in items %} {% if item.url %}
+  <a href="{{ item.url }}">{{ item.label }}</a>
+  {% else %}
+  <span>{{ item.label }}</span>
+  {% endif %} {% if not loop.last %}
+  <div class="divider">/</div>
+  {% endif %} {% endfor %}
+</div>
