@@ -96,6 +96,15 @@ a[data-testid="stLogoLink"] {
   display: none;
 }
 
+.site-title > span > a {
+  text-decoration: none;
+  color: var(--gray-700);
+}
+
+.site-title > span > a:hover {
+  text-decoration: none;
+}
+
 /* Sidebar, offset from the header and remove background to seamlessly blend in */
 section.stSidebar {
   margin-top: var(--sidebar-margin);
