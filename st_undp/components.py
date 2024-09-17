@@ -149,7 +149,7 @@ def image_card(src: str, summary: str, href: str, width: int = 12):
     st.html(body)
 
 
-def breadcrumb(items: list[dict]) -> None:
+def breadcrumb(items: list[dict[str, str]]) -> None:
     """
     Generate a breadcrumb navigation dynamically.
 
@@ -157,8 +157,8 @@ def breadcrumb(items: list[dict]) -> None:
     ----------
     items : list of dict
         List of breadcrumb items where each item is represented as a dictionary.
-        Each dictionary should have the keys 'label' and 'url'. If 'url' is None,
-        the breadcrumb item will be rendered as plain text.
+        Each dictionary should have a single key-value pair, where the key is the label
+        and the value is the URL. If the value is None, the breadcrumb item will be rendered as plain text.
 
     Returns
     -------
