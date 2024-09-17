@@ -17,6 +17,7 @@ __all__ = [
     "author",
     "author_card",
     "author_summary",
+    "breadcrumb",
     "content_card",
     "download_card",
     "featured_card",
@@ -142,6 +143,26 @@ def image_card(src: str, summary: str, href: str, width: int = 12):
     kwargs = locals()
     template = env.get_template("image-card.html")
     body = template.render(**kwargs)
+    st.html(body)
+
+
+def breadcrumb(items: list[dict]) -> None:
+    """
+    Generate a breadcrumb navigation dynamically.
+
+    Parameters
+    ----------
+    items : list of dict
+        List of breadcrumb items where each item is represented as a dictionary.
+        Each dictionary should have the keys 'label' and 'url'. If 'url' is None,
+        the breadcrumb item will be rendered as plain text.
+
+    Returns
+    -------
+    None.
+    """
+    template = env.get_template("breadcrumb.html")
+    body = template.render(items=items)
     st.html(body)
 
 
