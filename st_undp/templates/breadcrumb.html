@@ -1,9 +1,9 @@
 <nav class="breadcrumb">
-  <ul>
-    {% for item in items %} {% for label, url in item.items() %} {% if url %}
-    <li><a href="{{ url }}" aria-label="{{label}}">{{ label }}</a></li>
-    {% else %}
-    <li aria-current="{{label}}">{{ label }}</li>
-    {% endif %} {% endfor %} {% endfor %}
-  </ul>
+    <ul>
+        {% for item in items %} {% for label, url in item.items() %} {% if url %}
+          <li><a href="{{ url }}" aria-label="{{label}}">{{ label }}</a></li>
+        {% else %}
+          <li aria-current="{{label}}">{{ label }}</li>
+        {% endif %} {% endfor %} {% endfor %}
+    </ul>
 </nav>
