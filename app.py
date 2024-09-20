@@ -27,6 +27,11 @@ pages = [
         title="custom components",
         url_path="/custom",
     ),
+    st.Page(
+        page="pages/about.py",
+        title="about",
+        url_path="/about",
+    ),
 ]
 
 
