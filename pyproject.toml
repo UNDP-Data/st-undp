@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "st-undp"
 version = "0.1.0"
-description = "A utility package that styles Streamlit apps according to UNDP Design System"
+description = "A utility package that helps build Streamlit apps in line with UNDP Design System"
 authors = ["Mykola Skrynnyk <mykola.skrynnyk@undp.org>", "Gedion Disassa <gedion.disassa@undp.org>"]
 readme = "README.md"
 
@@ -18,6 +18,8 @@ pytest = "^8.3.2"
 pylint = "^3.2.7"
 black = "^24.8.0"
 isort = "^5.13.2"
+mkdocs-material = "^9.5.34"
+mkdocstrings = {extras = ["python"], version = "^0.26.1"}
 
 [build-system]
 requires = ["poetry-core"]

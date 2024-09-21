@@ -1,0 +1,47 @@
+site_name: st-undp
+site_url: https://undp-data.github.io/st-undp
+
+theme:
+  name: material
+  logo: assets/images/logo.svg
+  favicon: assets/images/favicon.ico
+  icon:
+    repo: material/github
+    edit: material/pencil
+    view: material/eye
+  features:
+    - content.action.view
+    - content.action.edit
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Usage: usage.md
+  - Reference: reference.md
+
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: numpy
+
+extra:
+  social:
+    - icon: material/github
+      link: https://github.com/undp-data
+    - icon: material/web
+      link: https://data.undp.org
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - pymdownx.superfences
+
+copyright: Copyright &copy; 2024 United Nations Development Programme
+
+repo_url: https://github.com/undp-data/st-undp
+repo_name: undp-data/st-undp
+edit_uri: edit/main/docs/

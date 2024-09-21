@@ -18,12 +18,12 @@ def apply_style(title: str = "UNDP") -> None:
 
     Parameters
     ----------
-    title : str, optional
+    title : str, default="UNDP"
         The page title, shown in the browser tab.
 
     Returns
     -------
-    None.
+    None
     """
     image = read_file("images/favicon.ico", "rb")
     st.set_page_config(

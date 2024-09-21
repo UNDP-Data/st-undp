@@ -1,5 +1,5 @@
 """
-Static HTML components in UNDP style.
+Static HTML components from the [UNDP Design System](https://design.undp.org).
 """
 
 import json
@@ -36,7 +36,29 @@ def header(
     subtitle_href: str | None = None,
     pages: list[st.Page] | None = None,
     logo: Literal["undp", "pnud"] = "undp",
-):
+) -> None:
+    """
+    [Header](https://design.undp.org/?path=/docs/components-navigation-components-main-navigation-country-header--docs) component.
+
+    Parameters
+    ----------
+    title : str
+        Title displayed in the header.
+    subtitle : str
+        Subtitle displayed in the header below the title.
+    title_href : str | None, optional
+        URL assigned to the title.
+    subtitle_href : str | None, optional
+        URL assigned to the subtitle.
+    pages : list[st.Page] | None, optional
+        List of pages to add as navigation in the header.
+    logo : Literal["undp", "pnud"], default="undp"
+        One of the two versions of the logo to use.
+
+    Returns
+    -------
+    None
+    """
     kwargs = locals()
     # read the logo image
     image = read_file(f"images/{logo}-logo-blue.svg", "r")
@@ -54,7 +76,21 @@ def header(
     st.html(body)
 
 
-def footer(columns: Literal["dfx", "default"] | dict[str, dict[str, str]] = "default"):
+def footer(
+    columns: Literal["dfx", "default"] | dict[str, dict[str, str]] = "default"
+) -> None:
+    """
+    [Footer](https://design.undp.org/?path=/docs/components-ui-components-footer--docs) component.
+
+    Parameters
+    ----------
+    columns : Literal["dfx", "default"] | dict[str, dict[str, str]], default="default"
+        Either a literal specifying the type of the footer to use or a mapping from column titles to column items.
+
+    Returns
+    -------
+    None
+    """
     if isinstance(columns, str):
         data = read_file(f"data/footer-{columns}.json")
         columns = json.loads(data)
@@ -71,12 +107,45 @@ def footer(columns: Literal["dfx", "default"] | dict[str, dict[str, str]] = "def
     st.html(body)
 
 
-def __footer_item(title: str, pages: dict) -> str:
+def __footer_item(title: str, pages: dict[str, str]) -> str:
+    """
+    Get a template for the footer item.
+
+    Parameters
+    ----------
+    title : str
+        Title for the column of items.
+    pages : dict[str, str]
+        Mapping from item names to item URLs.
+
+    Returns
+    -------
+    str
+        HTML template.
+    """
     template = env.get_template("footer-item.html")
     return template.render(title=title, pages=pages)
 
 
 def author(src: str, name: str, title: str, href: str) -> None:
+    """
+    [Author](https://design.undp.org/?path=/docs/components-ui-components-authors-author--docs) component.
+
+    Parameters
+    ----------
+    src : str
+        Image `src` attribute that can be a local path or URL to an image.
+    name : str
+        Name of the author.
+    title : str
+        Title of the author, typically a position.
+    href : str
+        URL the component points to when clicked.
+
+    Returns
+    -------
+    None
+    """
     kwargs = locals()
     template = env.get_template("author.html")
     body = template.render(**kwargs)
@@ -91,20 +160,84 @@ def author_card(
     href: str,
     link: str = "view",
     width: int = 4,
-):
+) -> None:
+    """
+    [Author card](https://design.undp.org/?path=/docs/components-ui-components-authors-author-card--docs) component.
+
+    Parameters
+    ----------
+    src : str
+        Image `src` attribute that can be a local path or URL to an image.
+    name : str
+        Name of the author.
+    title : str
+        Title of the author, typically a position.
+    summary : str
+        Summary text displayed below the author.
+    href : str
+        URL the component points to when clicked.
+    link : str
+        Text displayed below the summary, typically "READ MORE" or similar.
+    width : int, default=4
+        Component width using a 12-grid scheme.
+
+    Returns
+    -------
+    None
+    """
     kwargs = locals()
     template = env.get_template("author-card.html")
     body = template.render(**kwargs)
     st.html(body)
 
 
-def author_summary(src: str, name: str, title: str, summary: str):
+def author_summary(src: str, name: str, title: str, summary: str) -> None:
+    """
+    [Author summary](https://design.undp.org/?path=/docs/components-ui-components-author-summary--docs) component.
+    Parameters
+    ----------
+    src : str
+        Image `src` attribute that can be a local path or URL to an image.
+    name : str
+        Name of the author.
+    title : str
+        Title of the author, typically a position.
+    summary : str
+        Summary text displayed below the author.
+
+    Returns
+    -------
+    None
+    """
     template = env.get_template("author-summary.html")
     body = template.render(src=src, name=name, title=title, summary=summary)
     st.html(body)
 
 
-def content_card(src: str, caption: str, href: str, tag: str = "news", width: int = 12):
+def content_card(
+    src: str, caption: str, href: str, tag: str = "news", width: int = 12
+) -> None:
+    """
+    [Content card](https://design.undp.org/?path=/docs/components-ui-components-cards-content-card-with-image--docs) component
+    (with image).
+
+    Parameters
+    ----------
+    src : str
+        Image `src` attribute that can be a local path or URL to an image.
+    caption : str
+        Caption text displayed below the image.
+    href : str
+        URL the component points to when clicked.
+    tag : str, default="news"
+        Tag text shown above the image.
+    width : int, default=12
+        Component width using a 12-grid scheme.
+
+    Returns
+    -------
+    None
+    """
     kwargs = locals()
     template = env.get_template("content-card.html")
     body = template.render(**kwargs)
@@ -117,7 +250,27 @@ def download_card(
     format: str,
     href: str,
     variant: Literal["publication", "card", "default"] = "default",
-):
+) -> None:
+    """
+    [Download card](https://design.undp.org/?path=/docs/components-ui-components-cards-download-card--docs) component.
+
+    Parameters
+    ----------
+    src : str | None
+        Image `src` attribute that can be a local path or URL to an image.
+    title : str
+        Title of the document displayed on the card.
+    format : str
+        Format of the file displayed on the card, including file size, e.g., "PDF (800kb)".
+    href : str
+        URL the component points to when clicked, typically a download link.
+    variant : Literal["publication", "card", "default"], default="default"
+        One of the three card variants. If "default", `src` should be set to `None`.
+
+    Returns
+    -------
+    None
+    """
     if variant != "default":
         template = env.get_template("download-card-image.html")
         image = template.render(src=src, variant=variant)
@@ -135,14 +288,54 @@ def featured_card(
     href: str,
     tag: str = "news",
     width: int = 12,
-):
+) -> None:
+    """
+    [Featured card](https://design.undp.org/?path=/docs/components-ui-components-cards-featured-card--docs) component.
+
+    Parameters
+    ----------
+    src : str
+        Image `src` attribute that can be a local path or URL to an image.
+    title : str
+        Title displayed on the card in bold.
+    summary : str
+        Summary text displayed below the title.
+    href : str
+        URL the component points to when clicked.
+    tag : str, default="news"
+        Tag text shown above the title.
+    width : int, default=12
+        Component width using a 12-grid scheme.
+
+    Returns
+    -------
+    None
+    """
     kwargs = locals()
     template = env.get_template("featured-card.html")
     body = template.render(**kwargs)
     st.html(body)
 
 
-def image_card(src: str, summary: str, href: str, width: int = 12):
+def image_card(src: str, summary: str, href: str, width: int = 12) -> None:
+    """
+    [Image reveal card](https://design.undp.org/?path=/docs/components-ui-components-cards-image-reveal-card--docs) component.
+
+    Parameters
+    ----------
+    src : str
+        Image `src` attribute that can be a local path or URL to an image.
+    summary : str
+        Summary text displayed below the image.
+    href : str
+        URL the component points to when clicked.
+    width : int, default=12
+        Component width using a 12-grid scheme.
+
+    Returns
+    -------
+    None
+    """
     kwargs = locals()
     template = env.get_template("image-card.html")
     body = template.render(**kwargs)
@@ -151,18 +344,16 @@ def image_card(src: str, summary: str, href: str, width: int = 12):
 
 def breadcrumb(items: list[dict[str, str]]) -> None:
     """
-    Generate a breadcrumb navigation dynamically.
+    [Breadcrumbs](https://design.undp.org/?path=/docs/components-navigation-components-breadcrumbs--docs) component.
 
     Parameters
     ----------
-    items : list of dict
-        List of breadcrumb items where each item is represented as a dictionary.
-        Each dictionary should have a single key-value pair, where the key is the label
-        and the value is the URL. If the value is None, the breadcrumb item will be rendered as plain text.
+    items : list[dict[str, str]
+        List of items where each item maps a title to a URL.
 
     Returns
     -------
-    None.
+    None
     """
     template = env.get_template("breadcrumb.html")
     body = template.render(items=items)
@@ -184,7 +375,7 @@ def stats_card(value: int | float | str, title: str, text: str = "") -> None:
 
     Returns
     -------
-    None.
+    None
     """
     body = f"""
         <div class='stat-card-smaller'>
