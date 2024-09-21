@@ -1,9 +1,11 @@
 <nav class="breadcrumb">
     <ul>
-        {% for item in items %} {% for label, url in item.items() %} {% if url %}
-          <li><a href="{{ url }}" aria-label="{{label}}">{{ label }}</a></li>
-        {% else %}
-          <li aria-current="{{label}}">{{ label }}</li>
-        {% endif %} {% endfor %} {% endfor %}
+        {% for label, url in items.items() %}
+            {% if not loop.last %}
+                <li><a href="{{ url }}" aria-label="{{label}}">{{ label }}</a></li>
+            {% else %}
+                <li aria-current="{{label}}">{{ label }}</li>
+            {% endif %}
+        {% endfor %}
     </ul>
 </nav>

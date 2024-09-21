@@ -61,11 +61,13 @@ with tab3:
 
 with tab4:
     code = """
-        st_undp.breadcrumb([
-            {'Home': '/'},
-            {'Custom components': '/custom'},
-            {'Breadcrumb': None}
-        ])
+        st_undp.breadcrumb(
+            {
+                "Home": "/",
+                "Custom components": "/custom",
+                "Breadcrumb": None,
+            }
+        )
     """
     eval(code.strip())
     with st.expander("Show Code"):

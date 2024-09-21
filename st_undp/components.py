@@ -342,14 +342,17 @@ def image_card(src: str, summary: str, href: str, width: int = 12) -> None:
     st.html(body)
 
 
-def breadcrumb(items: list[dict[str, str]]) -> None:
+def breadcrumb(items: dict[str, str]) -> None:
     """
     [Breadcrumbs](https://design.undp.org/?path=/docs/components-navigation-components-breadcrumbs--docs) component.
 
+    The breadcrumbs are arranged in the same order as dictionary keys. Last item's value is ignored and can be
+    set to None.
+
     Parameters
     ----------
-    items : list[dict[str, str]
-        List of items where each item maps a title to a URL.
+    items : dict[str, str]
+        Mapping from names to URLs.
 
     Returns
     -------
