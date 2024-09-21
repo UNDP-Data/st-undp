@@ -6,6 +6,8 @@
 
 A utility package that styles Streamlit apps according to [UNDP Design System](https://design.undp.org).
 
+![App Preview](docs/assets/images/preview.gif)
+
 ## Table of Contents
 
 - [Installation](#installation)
