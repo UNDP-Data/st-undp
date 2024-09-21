@@ -1,0 +1,54 @@
+@font-face {
+    font-family: "proxima-nova";
+    src: url("https://use.typekit.net/af/705e94/00000000000000003b9b3062/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/705e94/00000000000000003b9b3062/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/705e94/00000000000000003b9b3062/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: normal;
+}
+
+:root {
+    --blue: #006EB5;
+    --white: #FAFAFA;
+    --md-text-font: "proxima-nova";
+    --md-primary-fg-color: var(--white);
+    --md-primary-fg-color--light: var(--white);
+    --md-primary-fg-color--dark: var(--white);
+    --undp-header-height: 5rem;
+}
+
+/* Style the header */
+header {
+    height: var(--undp-header-height);
+}
+
+/* Make the logo larger and reduce margins */
+.md-logo {
+    margin: 0 !important;
+}
+
+.md-logo img {
+    height: var(--undp-header-height) !important;
+}
+
+/* Make the title visible on white background */
+.md-header__title {
+    color: black;
+}
+
+/* Make GitHub details visible on white background */
+.md-header__source {
+    color: black;
+}
+
+/* Fix the text colours if using white as the primary fg */
+
+/* Navigation items */
+.md-nav__item .md-nav__link--active {
+    color: var(--blue);
+}
+
+/* Links */
+.md-typeset a {
+    color: var(--blue);
+}
