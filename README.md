@@ -6,7 +6,7 @@
 
 A utility package that styles Streamlit apps according to [UNDP Design System](https://design.undp.org).
 
-![App Preview](docs/assets/images/preview.gif)
+<img src= "docs/assets/images/preview.gif" alt="App Preview" style="border: 1px solid grey;">
 
 ## Table of Contents
 
