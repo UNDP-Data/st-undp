@@ -49,12 +49,12 @@ This will edit the theme section in the file if it exists or create it if it doe
 Then, call `apply_style` function inside your application entry point, typically `app.py`: 
 
 ```python
-# app.py or an equivalent module
-import streamlit as st
 import st_undp
+import streamlit as st
 
 st_undp.apply_style()
-st.header("Hello world!")  # now UNDP-styled
+
+st.title("Hello world!")  # now UNDP-styled
 ```
 
 ## Features
