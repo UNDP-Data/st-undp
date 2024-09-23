@@ -23,6 +23,7 @@ isort = "^5.13.2"
 [tool.poetry.group.docs.dependencies]
 mkdocs-material = "^9.5.34"
 mkdocstrings = {extras = ["python"], version = "^0.26.1"}
+mkdocs-click = "^0.8.1"
 
 [build-system]
 requires = ["poetry-core"]
