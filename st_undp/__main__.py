@@ -16,11 +16,15 @@ def cli():
     pass
 
 
-@cli.command()
-def configure():
-    """Configure app theme in Streamlit config file."""
-    # load a config file if available
+def __modify_config():
+    """
+    Modify `config.toml` to include the required theming for a Streamlit project.
+
+    If the file does not exist, it will be created.
+    """
     config_path = ".streamlit/config.toml"
+
+    # load a config file if available
     if os.path.exists(config_path):
         action = "Updated"
         click.echo("Found an existing config, editing...")
@@ -41,6 +45,11 @@ def configure():
         tomlkit.dump(config, file)
     click.echo(f"{action} Streamlit config at {config_path}.")
 
+
+@cli.command()
+def configure():
+    """Configure the project settings."""
+    __modify_config()
 
 if __name__ == "__main__":
     cli()
