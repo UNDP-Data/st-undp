@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/github/license/undp-data/st-undp)](https://github.com/undp-data/st-undp/blob/main/LICENSE)
 
 A utility package that styles Streamlit apps according to [UNDP Design System](https://design.undp.org).
-Check out this [live demo app](https://st-undp.azurewebsites.net).
+Check out the [documentation](https://undp-data.github.io/st-undp) or explore this [live demo app](https://st-undp.azurewebsites.net).
 
 ![Preview](docs/assets/images/preview.gif)
 
