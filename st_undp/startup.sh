@@ -12,6 +12,6 @@ python -m st_undp configure --settings style
 
 python -m streamlit run app.py \
   --server.address 0.0.0.0 \
-  --server.port 80  \
+  --server.port 8000  \
   --server.enableStaticServing true \
   --browser.gatherUsageStats false
