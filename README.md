@@ -5,8 +5,9 @@
 [![License](https://img.shields.io/github/license/undp-data/st-undp)](https://github.com/undp-data/st-undp/blob/main/LICENSE)
 
 A utility package that styles Streamlit apps according to [UNDP Design System](https://design.undp.org).
+Check out this [live demo app]((https://st-undp.azurewebsites.net)).
 
-<img src= "docs/assets/images/preview.gif" alt="App Preview" style="border: 1px solid grey;">
+![Preview](docs/assets/images/preview.gif)
 
 ## Table of Contents
 
@@ -22,11 +23,7 @@ A utility package that styles Streamlit apps according to [UNDP Design System](h
 Currently, the package is distributed via GitHub only. You can install it with `pip`:
 
 ```bash
-# latest version from the default branch (not recommended)
-pip install git+https://github.com/undp-data/st-undp.git
-
-# specific version from a tagged release (recommended) 
-pip install git+https://github.com/undp-data/st-undp.git@v0.1.0
+ pip install git+https://github.com/undp-data/st-undp.git@v0.1.0
 ```
 
 You can also add it to your `requirements.txt`:
@@ -65,7 +62,8 @@ This package is currently in the early stages of development. Main features incl
 
 - `ProximaNova` fonts
 - CSS styles for most Streamlit input components
-- Basic custom components like Stats Card
+- Several custom components from the UNDP Design System, such as Author, Footer, Header, Stats Card
+- No additional dependencies on top of what is required by `streamlit`
 
 ## Contributing
 
