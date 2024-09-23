@@ -9,7 +9,7 @@ AI as a Service offering from the Data Futures Exchange (DFx) at UNDP.
 """
 )
 
-col1, col2, col3 = st.columns(3)
+col1, col2, col3, col4 = st.columns(4)
 with col1:
     st_undp.featured_card(
         src="app/static/dfx.jpg",
@@ -32,5 +32,13 @@ with col3:
         title="UNDP Data GitHub",
         summary="Leverage open source projects for data visualisation, geospatial analytics and artificial intelligence",
         href="https://github.com/undp-data",
+        tag="resource",
+    )
+with col4:
+    st_undp.featured_card(
+        src="app/static/mkdocs.jpg",
+        title="st-undp Documentation",
+        summary="Leverage open source projects for data visualisation, geospatial analytics and artificial intelligence",
+        href="https://undp-data.github.io/st-undp",
         tag="resource",
     )
