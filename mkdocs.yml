@@ -39,6 +39,7 @@ extra_css:
 
 markdown_extensions:
   - pymdownx.superfences
+  - mkdocs-click
 
 copyright: Copyright &copy; 2024 United Nations Development Programme
 
