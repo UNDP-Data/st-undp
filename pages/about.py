@@ -38,7 +38,7 @@ with col4:
     st_undp.featured_card(
         src="app/static/mkdocs.jpg",
         title="st-undp Documentation",
-        summary="Leverage open source projects for data visualisation, geospatial analytics and artificial intelligence",
+        summary="Familiarise yourself with the ways you can use the package for your Streamlit applications",
         href="https://undp-data.github.io/st-undp",
         tag="resource",
     )
