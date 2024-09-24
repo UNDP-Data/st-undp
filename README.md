@@ -23,7 +23,7 @@ Check out the [documentation](https://undp-data.github.io/st-undp) or explore th
 Currently, the package is distributed via GitHub only. You can install it with `pip`:
 
 ```bash
- pip install git+https://github.com/undp-data/st-undp.git@v0.1.0
+ pip install git+https://github.com/undp-data/st-undp.git@0.1.0
 ```
 
 You can also add it to your `requirements.txt`:
