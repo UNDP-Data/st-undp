@@ -51,7 +51,7 @@ def __modify_config():
     "--settings",
     type=click.Choice(["style", "deployment"], case_sensitive=False),
     default="style",
-    help="The type of configuration settings for your project. `style` modifies `config.yaml` to style your app"
+    help="The type of configuration settings for your project. `style` modifies `config.toml` to style your app"
     " while `deployment` adds a `startup.sh` with commands to style and run your app on Azure App Service."
     " See the package documentation for usage details.",
 )
