@@ -41,7 +41,7 @@ def __modify_config():
     click.echo("Set required theme settings...")
 
     # write the config file
-    with open(config_path, "w+") as file:
+    with open(config_path, "w+", encoding="utf-8") as file:
         tomlkit.dump(config, file)
     click.echo(f"{action} Streamlit config at {config_path}.")
 
@@ -51,8 +51,10 @@ def __modify_config():
     "--settings",
     type=click.Choice(["style", "deployment"], case_sensitive=False),
     default="style",
-    help="The type of configuration settings for your project. `style` modifies `config.yaml` to style your app"
-    " while `deployment` adds a `startup.sh` with commands to style and run your app on Azure App Service."
+    help="The type of configuration settings for your project. `style` modifies\
+          `config.yaml` to style your app"
+    " while `deployment` adds a `startup.sh` with commands to style and run your\
+          app on Azure App Service."
     " See the package documentation for usage details.",
 )
 def configure(settings: str):
@@ -62,7 +64,7 @@ def configure(settings: str):
     elif settings == "deployment":
         file_name = "startup.sh"
         script = read_file(file_name)
-        with open(file_name, "w") as file:
+        with open(file_name, "w", encoding="utf-8") as file:
             file.write(script)
         click.echo(f"Added {file_name} for deployment to Azure Web Apps.")
         message = click.style(
