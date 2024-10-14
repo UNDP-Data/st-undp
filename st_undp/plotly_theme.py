@@ -340,6 +340,7 @@ undp_colors = {
     },
 }
 
+
 def set_plotly_custom_theme():
     """
     Applies custom UNDP theme for Plotly charts
@@ -383,26 +384,74 @@ def set_plotly_custom_theme():
                 ],
                 "sequential": [
                     [0.0, undp_colors["sequentialColors"]["negativeColorsx10"][0]],
-                    [0.1111111111111111, undp_colors["sequentialColors"]["negativeColorsx10"][1]],
-                    [0.2222222222222222, undp_colors["sequentialColors"]["negativeColorsx10"][2]],
-                    [0.3333333333333333, undp_colors["sequentialColors"]["negativeColorsx10"][3]],
-                    [0.4444444444444444, undp_colors["sequentialColors"]["negativeColorsx10"][4]],
-                    [0.5555555555555556, undp_colors["sequentialColors"]["negativeColorsx10"][5]],
-                    [0.6666666666666666, undp_colors["sequentialColors"]["negativeColorsx10"][6]],
-                    [0.7777777777777778, undp_colors["sequentialColors"]["negativeColorsx10"][7]],
-                    [0.8888888888888888, undp_colors["sequentialColors"]["negativeColorsx10"][8]],
+                    [
+                        0.1111111111111111,
+                        undp_colors["sequentialColors"]["negativeColorsx10"][1],
+                    ],
+                    [
+                        0.2222222222222222,
+                        undp_colors["sequentialColors"]["negativeColorsx10"][2],
+                    ],
+                    [
+                        0.3333333333333333,
+                        undp_colors["sequentialColors"]["negativeColorsx10"][3],
+                    ],
+                    [
+                        0.4444444444444444,
+                        undp_colors["sequentialColors"]["negativeColorsx10"][4],
+                    ],
+                    [
+                        0.5555555555555556,
+                        undp_colors["sequentialColors"]["negativeColorsx10"][5],
+                    ],
+                    [
+                        0.6666666666666666,
+                        undp_colors["sequentialColors"]["negativeColorsx10"][6],
+                    ],
+                    [
+                        0.7777777777777778,
+                        undp_colors["sequentialColors"]["negativeColorsx10"][7],
+                    ],
+                    [
+                        0.8888888888888888,
+                        undp_colors["sequentialColors"]["negativeColorsx10"][8],
+                    ],
                     [1.0, undp_colors["sequentialColors"]["negativeColorsx10"][9]],
                 ],
                 "sequentialminus": [
                     [0.0, undp_colors["sequentialColors"]["positiveColorsx10"][0]],
-                    [0.1111111111111111, undp_colors["sequentialColors"]["positiveColorsx10"][1]],
-                    [0.2222222222222222, undp_colors["sequentialColors"]["positiveColorsx10"][2]],
-                    [0.3333333333333333, undp_colors["sequentialColors"]["positiveColorsx10"][3]],
-                    [0.4444444444444444, undp_colors["sequentialColors"]["positiveColorsx10"][4]],
-                    [0.5555555555555556, undp_colors["sequentialColors"]["positiveColorsx10"][5]],
-                    [0.6666666666666666, undp_colors["sequentialColors"]["positiveColorsx10"][6]],
-                    [0.7777777777777778, undp_colors["sequentialColors"]["positiveColorsx10"][7]],
-                    [0.8888888888888888, undp_colors["sequentialColors"]["positiveColorsx10"][8]],
+                    [
+                        0.1111111111111111,
+                        undp_colors["sequentialColors"]["positiveColorsx10"][1],
+                    ],
+                    [
+                        0.2222222222222222,
+                        undp_colors["sequentialColors"]["positiveColorsx10"][2],
+                    ],
+                    [
+                        0.3333333333333333,
+                        undp_colors["sequentialColors"]["positiveColorsx10"][3],
+                    ],
+                    [
+                        0.4444444444444444,
+                        undp_colors["sequentialColors"]["positiveColorsx10"][4],
+                    ],
+                    [
+                        0.5555555555555556,
+                        undp_colors["sequentialColors"]["positiveColorsx10"][5],
+                    ],
+                    [
+                        0.6666666666666666,
+                        undp_colors["sequentialColors"]["positiveColorsx10"][6],
+                    ],
+                    [
+                        0.7777777777777778,
+                        undp_colors["sequentialColors"]["positiveColorsx10"][7],
+                    ],
+                    [
+                        0.8888888888888888,
+                        undp_colors["sequentialColors"]["positiveColorsx10"][8],
+                    ],
                     [1.0, undp_colors["sequentialColors"]["positiveColorsx10"][9]],
                 ],
             },
@@ -461,9 +510,21 @@ def set_plotly_custom_theme():
             },
             "shapedefaults": {"line": {"color": undp_colors["grays"]["gray-700"]}},
             "ternary": {
-                "aaxis": {"gridcolor": undp_colors["graphNoData"], "linecolor": undp_colors["graphNoData"], "ticks": ""},
-                "baxis": {"gridcolor": undp_colors["graphNoData"], "linecolor": undp_colors["graphNoData"], "ticks": ""},
-                "caxis": {"gridcolor": undp_colors["graphNoData"], "linecolor": undp_colors["graphNoData"], "ticks": ""},
+                "aaxis": {
+                    "gridcolor": undp_colors["graphNoData"],
+                    "linecolor": undp_colors["graphNoData"],
+                    "ticks": "",
+                },
+                "baxis": {
+                    "gridcolor": undp_colors["graphNoData"],
+                    "linecolor": undp_colors["graphNoData"],
+                    "ticks": "",
+                },
+                "caxis": {
+                    "gridcolor": undp_colors["graphNoData"],
+                    "linecolor": undp_colors["graphNoData"],
+                    "ticks": "",
+                },
                 "bgcolor": undp_colors["grays"]["gray-300"],
             },
             "title": {"x": 0.05},

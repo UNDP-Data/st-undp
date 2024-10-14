@@ -32,7 +32,9 @@ with tabs[0]:
     fig = go.Figure(
         data=[go.Bar(y=data["categories"], x=data["values"], orientation="h")]
     )
-    fig.update_layout(title="DIY Custom Plot", xaxis_title="values", yaxis_title="categories")
+    fig.update_layout(
+        title="DIY Custom Plot", xaxis_title="values", yaxis_title="categories"
+    )
 
     fig.add_annotation(
         text="Source: Example Data",
@@ -489,13 +491,23 @@ with tabs[9]:
             key="heatmap_y",
         )
         color_scale_options = {
-        "Neutral Colors": st_undp.undp_colors["sequentialColors"]["neutralColorsx10"],
-        "Positive Colors": st_undp.undp_colors["sequentialColors"]["positiveColorsx10"],
-        "Negative Colors": st_undp.undp_colors["sequentialColors"]["negativeColorsx10"],
-        "Diverging Colors": st_undp.undp_colors["divergentColors"]["colorsx10"]
+            "Neutral Colors": st_undp.undp_colors["sequentialColors"][
+                "neutralColorsx10"
+            ],
+            "Positive Colors": st_undp.undp_colors["sequentialColors"][
+                "positiveColorsx10"
+            ],
+            "Negative Colors": st_undp.undp_colors["sequentialColors"][
+                "negativeColorsx10"
+            ],
+            "Diverging Colors": st_undp.undp_colors["divergentColors"]["colorsx10"],
         }
-        selected_color_scale = st.selectbox("Select Color Scale", list(color_scale_options.keys()), 0, key="select-heatmap-colorscale")
-
+        selected_color_scale = st.selectbox(
+            "Select Color Scale",
+            list(color_scale_options.keys()),
+            0,
+            key="select-heatmap-colorscale",
+        )
 
     with col2:
         heatmap_data = {
@@ -512,7 +524,7 @@ with tabs[9]:
             annotation=annotation,
             annotation_x=annotation_x,
             annotation_y=annotation_y,
-            colorscale=color_scale_options[selected_color_scale]
+            colorscale=color_scale_options[selected_color_scale],
         )
         code = f"""
 st_undp.heatmap(heatmap_data, title='{title}', x_title='{x_title}', y_title='{y_title}', annotation='{annotation}', annotation_x={annotation_x}, annotation_y={annotation_y}, colorscale={color_scale_options[selected_color_scale]})

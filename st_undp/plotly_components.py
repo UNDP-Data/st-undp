@@ -1,5 +1,6 @@
-import streamlit as st
 import plotly.graph_objects as go
+import streamlit as st
+
 
 def area_chart(
     data,
@@ -252,9 +253,11 @@ def heatmap(
     annotation=None,
     annotation_x=0.5,
     annotation_y=-0.2,
-    colorscale=None
+    colorscale=None,
 ):
-    fig = go.Figure(data=go.Heatmap(z=data["z"], x=data["x"], y=data["y"], colorscale=colorscale))
+    fig = go.Figure(
+        data=go.Heatmap(z=data["z"], x=data["x"], y=data["y"], colorscale=colorscale)
+    )
     fig.update_layout(title=title, xaxis_title=x_title, yaxis_title=y_title)
     if annotation:
         fig.add_annotation(
