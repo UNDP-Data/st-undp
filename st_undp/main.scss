@@ -202,7 +202,6 @@ div[data-testid="stMarkdownContainer"] > ul > li > a {
 
 div[data-testid="stMarkdownContainer"] a:hover,
 div[data-testid="stMarkdownContainer"] > ul > li > a:hover {
-  animation: lineLoop-animation-for-links 2s linear infinite;
   color: var(--black);
 }
 
