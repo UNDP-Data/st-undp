@@ -420,10 +420,10 @@ div[data-testid="stMultiSelect"] > div > div > div {
 
 /* Checkbox styling */
 div[data-testid="stCheckbox"] > label > span {
-  background-color: #ffffff;
   border-color: var(--dark-red);
-  background: url(https://design.undp.org/static/media/icon-check.b332b98d.svg)
-    no-repeat center center;
+  // background-color: #ffffff;
+  // background: url(https://design.undp.org/static/media/icon-check.b332b98d.svg)
+  //   no-repeat center center;
 }
 
 /* Accordion styling */
