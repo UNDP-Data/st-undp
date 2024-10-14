@@ -1,3 +1,7 @@
+"""
+   Plotly custom theme and configuration
+"""
+
 import plotly.io as pio
 
 undp_colors = {

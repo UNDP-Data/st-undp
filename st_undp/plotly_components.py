@@ -1,6 +1,9 @@
+"""
+   Plotly components scaffolding
+"""
+
 import plotly.graph_objects as go
 import streamlit as st
-
 
 def area_chart(
     data,
@@ -11,6 +14,9 @@ def area_chart(
     annotation_x=0.5,
     annotation_y=-0.2,
 ):
+    """
+        Area Chart Scaffolding
+    """
     fig = go.Figure(data=[go.Scatter(x=data["x"], y=data["y"], fill="tozeroy")])
     fig.update_layout(title=title, xaxis_title=x_title, yaxis_title=y_title)
     if annotation:
@@ -34,9 +40,12 @@ def beeswarm_chart(
     annotation_x=0.5,
     annotation_y=-0.2,
 ):
+    """
+        Beeswarm Chart Scaffolding
+    """
     fig = go.Figure(
         data=[
-            go.Scatter(x=data["x"], y=data["y"], mode="markers", marker=dict(size=12))
+            go.Scatter(x=data["x"], y=data["y"], mode="markers", marker={"size": 12})
         ]
     )
     fig.update_layout(title=title, xaxis_title=x_title, yaxis_title=y_title)
@@ -61,6 +70,9 @@ def butterfly_chart(
     annotation_x=0.5,
     annotation_y=-0.2,
 ):
+    """
+        Butterfly Chart Scaffolding
+    """
     fig = go.Figure()
     fig.add_trace(
         go.Bar(y=data["categories"], x=data["values1"], name="Group 1", orientation="h")
@@ -95,13 +107,16 @@ def circle_packing_chart(
     annotation_x=0.5,
     annotation_y=-0.2,
 ):
+    """
+        Circle Packing Chart Scaffolding
+    """
     fig = go.Figure(
         data=[
             go.Scatter(
                 x=data["x"],
                 y=data["y"],
                 mode="markers",
-                marker=dict(size=data["sizes"]),
+                marker={"size": data['sizes']},
             )
         ]
     )
@@ -121,6 +136,9 @@ def circle_packing_chart(
 def donut_chart(
     data, title="Donut Chart", annotation=None, annotation_x=0.5, annotation_y=-0.2
 ):
+    """
+        Donut Chart Scaffolding
+    """
     fig = go.Figure(
         data=[go.Pie(labels=data["labels"], values=data["values"], hole=0.3)]
     )
@@ -146,6 +164,9 @@ def dumbbell_chart(
     annotation_x=0.5,
     annotation_y=-0.2,
 ):
+    """
+        Dumbbell Chart Scaffolding
+    """
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=data["x1"], y=data["y"], mode="markers", name="Start"))
     fig.add_trace(go.Scatter(x=data["x2"], y=data["y"], mode="markers", name="End"))
@@ -156,7 +177,7 @@ def dumbbell_chart(
             y0=data["y"][i],
             x1=data["x2"][i],
             y1=data["y"][i],
-            line=dict(color="gray", width=2),
+            line={"color": 'gray', "width": 2},
         )
     fig.update_layout(title=title, xaxis_title=x_title, yaxis_title=y_title)
     if annotation:
@@ -181,6 +202,9 @@ def dual_axes_chart(
     annotation_x=0.5,
     annotation_y=-0.2,
 ):
+    """
+        Dual Axes chart Scaffolding
+    """
     fig = go.Figure()
     fig.add_trace(
         go.Scatter(
@@ -195,8 +219,8 @@ def dual_axes_chart(
     fig.update_layout(
         title=title,
         xaxis_title=x_title,
-        yaxis=dict(title=y_title1),
-        yaxis2=dict(title=y_title2, overlaying="y", side="right"),
+        yaxis={"title": y_title1},
+        yaxis2={"title": y_title2, "overlaying": 'y', "side": 'right'},
     )
     if annotation:
         fig.add_annotation(
@@ -220,6 +244,9 @@ def grouped_bar_chart(
     annotation_x=0.5,
     annotation_y=-0.2,
 ):
+    """
+        Grouped Bar Chart Scaffolding
+    """
     fig = go.Figure()
     for group in data["groups"]:
         fig.add_trace(
@@ -255,6 +282,9 @@ def heatmap(
     annotation_y=-0.2,
     colorscale=None,
 ):
+    """
+        Heatmap Chart Scaffolding
+    """
     fig = go.Figure(
         data=go.Heatmap(z=data["z"], x=data["x"], y=data["y"], colorscale=colorscale)
     )
@@ -279,6 +309,9 @@ def histogram(
     annotation_x=0.5,
     annotation_y=-0.2,
 ):
+    """
+        Histogram Scaffolding
+    """
     fig = go.Figure(data=[go.Histogram(x=data["values"])])
     fig.update_layout(title=title, xaxis_title=x_title)
     if annotation:
@@ -302,6 +335,9 @@ def line_chart(
     annotation_x=0.5,
     annotation_y=-0.2,
 ):
+    """
+        Line Chart Scaffolding
+    """
     fig = go.Figure(data=[go.Scatter(x=data["x"], y=data["y"], mode="lines+markers")])
     fig.update_layout(title=title, xaxis_title=x_title, yaxis_title=y_title)
     if annotation:
@@ -325,6 +361,9 @@ def multiline_chart(
     annotation_x=0.5,
     annotation_y=-0.2,
 ):
+    """
+        Multiline Chart Scaffolding
+    """
     fig = go.Figure()
     for line in data["lines"]:
         fig.add_trace(
@@ -348,6 +387,9 @@ def multiline_chart(
 def pie_chart(
     data, title="Pie Chart", annotation=None, annotation_x=0.5, annotation_y=-0.2
 ):
+    """
+        Pie Chart Scaffolding
+    """
     fig = go.Figure(data=[go.Pie(labels=data["labels"], values=data["values"])])
     fig.update_layout(title=title)
     if annotation:
@@ -371,6 +413,9 @@ def scatter_plot(
     annotation_x=0.5,
     annotation_y=-0.2,
 ):
+    """
+        Scatter Plot Scaffolding
+    """
     fig = go.Figure(data=[go.Scatter(x=data["x"], y=data["y"], mode="markers")])
     fig.update_layout(title=title, xaxis_title=x_title, yaxis_title=y_title)
     if annotation:
@@ -396,6 +441,9 @@ def simple_bar_chart(
     annotation_y=-0.2,
     reference_line=None,
 ):
+    """
+        Simple Bar Chart Scaffolding
+    """
     fig = go.Figure(
         data=[go.Bar(y=data["categories"], x=data["values"], orientation=orient)]
     )
@@ -418,7 +466,7 @@ def simple_bar_chart(
             x1=reference_line,
             y0=0,
             y1=len(data["categories"]),
-            line=dict(color="black", width=1, dash="dash"),
+            line={"color": 'black', "width": 1, "dash": 'dash'},
         )
 
     st.plotly_chart(fig)
@@ -434,6 +482,9 @@ def stacked_bar_chart(
     annotation_x=0.5,
     annotation_y=-0.2,
 ):
+    """
+        Stacked Bar Chart Scaffolding
+    """
     fig = go.Figure()
     for group in data["groups"]:
         fig.add_trace(
@@ -462,11 +513,14 @@ def stacked_bar_chart(
 def sparkline_chart(
     data, title="Sparkline Chart", annotation=None, annotation_x=0.5, annotation_y=-0.2
 ):
+    """
+        Sparkline Chart Scaffolding
+    """
     fig = go.Figure(data=[go.Scatter(x=data["x"], y=data["y"], mode="lines")])
     fig.update_layout(
         title=title,
-        xaxis=dict(showgrid=False, zeroline=False, visible=False),
-        yaxis=dict(showgrid=False, zeroline=False, visible=False),
+        xaxis={"showgrid": False, "zeroline": False, "visible": False},
+        yaxis={"showgrid": False, "zeroline": False, "visible": False},
     )
     if annotation:
         fig.add_annotation(
