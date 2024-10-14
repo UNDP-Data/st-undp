@@ -28,6 +28,11 @@ pages = [
         url_path="/custom",
     ),
     st.Page(
+        page="pages/integrations.py",
+        title="integrations",
+        url_path="/integrations"
+    ),
+    st.Page(
         page="pages/about.py",
         title="about",
         url_path="/about",
