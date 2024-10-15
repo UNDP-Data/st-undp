@@ -72,3 +72,9 @@ with tab5:
     st.subheader("Subheader")
     st.markdown("Regular text with an [example link](https://data.undp.org).")
     st.text("Do not use `st.text`. Its content will not be properly styled.")
+    st.markdown("Code sections looks as follows `print(f'hello streamlit app')` ")
+    for item in [
+        {'header': 'An expander', 'body': 'This is an expander with an [example link](https://data.undp.org)'}
+    ]:
+        with st.expander(item['header']):
+            st.write(item['body'])
