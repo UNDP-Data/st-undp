@@ -98,6 +98,10 @@ a:hover {
   color: var(--gray-700);
 }
 
+a:visited {
+  color: var(--gray-700);
+}
+
 a[data-testid="stLogoLink"] {
   display: none;
 }
@@ -185,7 +189,8 @@ footer {
 code {
   background: var(--gray-200);
   color: rgb(84, 84, 84);
-  padding: 0.5em;
+  padding: 0.1em 0.2em 0.1em 0.2em;
+  font-size: medium;
 }
 
 /* Link styling */
