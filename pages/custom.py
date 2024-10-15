@@ -20,7 +20,7 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11 = st.tabs(
     ]
 )
 with tab1:
-    code = """
+    CODE = """
     st_undp.author(
         src="app/static/aristotle.jpg",
         name="Aristotle",
@@ -28,12 +28,12 @@ with tab1:
         href="https://en.wikipedia.org/wiki/Aristotle",
     )
     """
-    eval(code.strip())
+    eval(CODE.strip())
     with st.expander("Show Code"):
-        st.code(code)
+        st.code(CODE)
 
 with tab2:
-    code = """
+    CODE = """
     st_undp.author_card(
         src="app/static/aristotle.jpg",
         name="Aristotle",
@@ -42,12 +42,12 @@ with tab2:
         href="https://en.wikipedia.org/wiki/Aristotle",
     )
     """
-    eval(code.strip())
+    eval(CODE.strip())
     with st.expander("Show Code"):
-        st.code(code)
+        st.code(CODE)
 
 with tab3:
-    code = """
+    CODE = """
     st_undp.author_summary(
         src="app/static/aristotle.jpg",
         name="Aristotle",
@@ -55,12 +55,12 @@ with tab3:
         summary="As the founder of the Peripatetic school of philosophy in the Lyceum in Athens, he began the wider Aristotelian tradition that followed, which set the groundwork for the development of modern science."
     )
     """
-    eval(code.strip())
+    eval(CODE.strip())
     with st.expander("Show Code"):
-        st.code(code)
+        st.code(CODE)
 
 with tab4:
-    code = """
+    CODE = """
         st_undp.breadcrumb(
             {
                 "Home": "/",
@@ -69,15 +69,15 @@ with tab4:
             }
         )
     """
-    eval(code.strip())
+    eval(CODE.strip())
     with st.expander("Show Code"):
-        st.code(code)
+        st.code(CODE)
 
 with tab5:
     st.subheader("Content Card")
-    body = "Use st.columns to arrange multiple cards in a row."
-    st.info(body, icon=":material/lightbulb:")
-    code = """
+    BODY = "Use st.columns to arrange multiple cards in a row."
+    st.info(BODY, icon=":material/lightbulb:")
+    CODE = """
     st_undp.content_card(
         src="app/static/aristotle.jpg",
         caption="Nicomachean Ethics is closely related to Eudemian Ethics",
@@ -91,12 +91,12 @@ with tab5:
     for _ in range(rows):
         for col in st.columns(cols):
             with col:
-                eval(code)
+                eval(CODE)
     with st.expander("Show Code"):
-        st.code(code)
+        st.code(CODE)
 
 with tab6:
-    code = """
+    CODE = """
     st_undp.download_card(
         src="app/static/aristotle.jpg",
         title="Corpus Aristotelicum",
@@ -107,12 +107,12 @@ with tab6:
     """.strip()
     for col, variant in zip(st.columns(3), ("publication", "card", "default")):
         with col:
-            eval(code.format(variant))
+            eval(CODE.format(variant))
             with st.expander("Show Code"):
-                st.code(code.format(variant))
+                st.code(CODE.format(variant))
 
 with tab7:
-    code = """
+    CODE = """
     st_undp.featured_card(
        src="app/static/aristotle.jpg",
        title="Nicomachean Ethics",
@@ -121,13 +121,13 @@ with tab7:
        width=6,
     )
     """.strip()
-    eval(code)
+    eval(CODE)
     with st.expander("Show Code"):
-        st.code(code)
+        st.code(CODE)
 
 with tab8:
-    body = "Make sure to call the footer function at the bottom of your script outside of any tab, column etc."
-    st.info(body, icon=":material/lightbulb:")
+    BODY = "Make sure to call the footer function at the bottom of your script outside of any tab, column etc."
+    st.info(BODY, icon=":material/lightbulb:")
     footer = st.radio(
         label="Footer",
         options=("None", "UNDP (Default)", "UNDP DFx", "Custom"),
@@ -136,9 +136,9 @@ with tab8:
 
     footer = footer.lower()
     if "default" in footer:
-        code = """st_undp.footer()"""
+        CODE = """st_undp.footer()"""
     elif "dfx" in footer:
-        code = """st_undp.footer("dfx")"""
+        CODE = """st_undp.footer("dfx")"""
     elif "custom" in footer:
         columns = {
             "focus areas": {
@@ -153,12 +153,12 @@ with tab8:
             },
         }
         st.json(columns)
-        code = """st_undp.footer(columns)"""
+        CODE = """st_undp.footer(columns)"""
     else:
-        code = "None"
+        CODE = "None"
     with st.expander("Show Code"):
-        st.code(code)
-    eval(code)
+        st.code(CODE)
+    eval(CODE)
 
 with tab9:
     logo = st.radio("Logo", ("UNDP", "PNUD"), key="logo", horizontal=True)
@@ -175,7 +175,7 @@ with tab9:
         st.code(code)
 
 with tab10:
-    code = """
+    CODE = """
     st_undp.image_card(
        src="app/static/aristotle.jpg",
        summary="Nicomachean Ethics is Aristotle's best-known works on ethics: the science of the good for human life, that which is the goal or end at which all our actions aim",
@@ -183,31 +183,31 @@ with tab10:
        width=3,
     )
     """.strip()
-    eval(code)
+    eval(CODE)
     with st.expander("Show Code"):
-        st.code(code)
+        st.code(CODE)
 
 with tab11:
     col1, col2 = st.columns(2)
     with col1:
-        code = """
+        CODE = """
             st_undp.stats_card(
                 value=3.14,
                 title="Pi",
                 text="Pi is a mathematical constant that is the ratio of a circle's circumference to its diameter",
             )
             """
-        eval(code.strip())
+        eval(CODE.strip())
         with st.expander("Show Code"):
-            st.code(code)
+            st.code(CODE)
     with col2:
-        code = """
+        CODE = """
             st_undp.stats_card(
                 value=2.71,
                 title="Euler's constant",
                 text="Euler's constant is  is a mathematical constant, defined as the limiting difference between the harmonic series and the natural logarithm",
             )
             """
-        eval(code.strip())
+        eval(CODE.strip())
         with st.expander("Show Code"):
-            st.code(code)
+            st.code(CODE)

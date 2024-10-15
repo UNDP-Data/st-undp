@@ -7,6 +7,8 @@ from io import BytesIO
 import streamlit as st
 
 from .components import *
+from .plotly_components import *
+from .plotly_theme import *
 from .utils import read_file
 
 
@@ -32,6 +34,7 @@ def apply_style(title: str = "UNDP") -> None:
         layout="wide",
         initial_sidebar_state="auto",
     )
+    set_plotly_custom_theme()
     css = read_file("main.scss")
     body = f"<style>{css}</style>"
     st.html(body)

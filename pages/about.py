@@ -30,7 +30,7 @@ with col3:
     st_undp.featured_card(
         src="app/static/github.jpg",
         title="UNDP Data GitHub",
-        summary="Leverage open source projects for data visualisation, geospatial analytics and artificial intelligence",
+        summary="Leverage open source projects for data visualisation, geo-spatial analytics and artificial intelligence",
         href="https://github.com/undp-data",
         tag="resource",
     )
