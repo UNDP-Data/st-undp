@@ -27,11 +27,7 @@ pages = [
         title="custom components",
         url_path="/custom",
     ),
-    st.Page(
-        page="pages/integrations.py",
-        title="integrations",
-        url_path="/integrations"
-    ),
+    st.Page(page="pages/extras.py", title="extras", url_path="/extras"),
     st.Page(
         page="pages/about.py",
         title="about",
