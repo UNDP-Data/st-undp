@@ -106,12 +106,18 @@ a[data-testid="stLogoLink"] {
   display: none;
 }
 
+// disable link effect in figures such as charts and maps
 .modebar-group > a {
   text-decoration: none;
   background-image: none;
 }
 
 .modebar-group > a:hover {
+  text-decoration: none;
+  background-image: none;
+}
+
+.modebar-btn {
   text-decoration: none;
   background-image: none;
 }
