@@ -24,6 +24,7 @@ def set_plotly_theme():
     custom_template = load_plotly_theme()
     pio.templates["undp"] = custom_template
 
+
 def apply_plotly_theme():
     """
     Applies UNDP theme for Plotly charts

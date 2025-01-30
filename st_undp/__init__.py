@@ -7,7 +7,7 @@ from io import BytesIO
 import streamlit as st
 
 from .components import *
-from .plotly_theme import set_plotly_theme, apply_plotly_theme
+from .plotly_theme import apply_plotly_theme, set_plotly_theme
 from .utils import read_file
 
 

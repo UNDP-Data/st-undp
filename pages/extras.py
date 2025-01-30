@@ -2,7 +2,9 @@
     extras component 
         eg. Plotly charts
 """
+
 import streamlit as st
+
 
 def insert_controls(prefix: str) -> dict:
     """
@@ -39,6 +41,7 @@ def insert_controls(prefix: str) -> dict:
         ),
     }
     return controls_dict
+
 
 tabs = st.tabs(
     [
