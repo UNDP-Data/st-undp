@@ -48,7 +48,7 @@ python -m st_undp configure
 ```
 
 This will edit the theme section in the file if it exists or create it if it doesn't.
-Then, call `apply_style` function inside your application entry point, typically `app.py`: 
+Then, call `apply_style` function inside your application entry point, typically `app.py`:
 
 ```python
 import st_undp
@@ -66,6 +66,7 @@ This package is currently in the early stages of development. Main features incl
 - `ProximaNova` fonts
 - CSS styles for most Streamlit input components
 - Several custom components from the UNDP Design System, such as Author, Footer, Header, Stats Card
+- Custom UNDP themed for Plotly and ready-made Plotly charts.
 - No additional dependencies on top of what is required by `streamlit`
 
 ## Contributing
@@ -84,16 +85,16 @@ routine operations.
 
 ## License
 
-This project is licensed under the BSD 3-Clause License. However, entities or individuals not affiliated with UNDP 
-are strictly prohibited from using this package or any of its components to create, share, publish, or distribute works 
+This project is licensed under the BSD 3-Clause License. However, entities or individuals not affiliated with UNDP
+are strictly prohibited from using this package or any of its components to create, share, publish, or distribute works
 that resemble, claim affiliation with, or imply endorsement by UNDP.
 
-UNDP’s name, emblem and its abbreviation are the exclusive property of UNDP and are protected under international law. 
-Their unauthorized use is prohibited, and they may not be reproduced or used in any manner without UNDP’s prior written permission. 
+UNDP’s name, emblem and its abbreviation are the exclusive property of UNDP and are protected under international law.
+Their unauthorized use is prohibited, and they may not be reproduced or used in any manner without UNDP’s prior written permission.
 
 ## Contact
 
 This project is part of [Data Futures Exchange (DFx)](https://data.undp.org) at UNDP.
-If you are facing any issues or would like to make some suggestions, feel free to 
-[open an issue](https://github.com/undp-data/st-undp/issues/new/choose). 
+If you are facing any issues or would like to make some suggestions, feel free to
+[open an issue](https://github.com/undp-data/st-undp/issues/new/choose).
 For enquiries about DFx, visit [Contact Us](https://data.undp.org/contact-us).

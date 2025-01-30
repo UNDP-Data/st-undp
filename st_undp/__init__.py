@@ -7,10 +7,11 @@ from io import BytesIO
 import streamlit as st
 
 from .components import *
+from .plotly_theme import set_plotly_theme, apply_plotly_theme
 from .utils import read_file
 
 
-def apply_style(title: str = "UNDP") -> None:
+def apply_style(title: str = "UNDP", style_plotly: bool = True) -> None:
     """
     Apply the styling based on UNDP Design System, including
     CSS rules and favicon.
@@ -32,6 +33,11 @@ def apply_style(title: str = "UNDP") -> None:
         layout="wide",
         initial_sidebar_state="auto",
     )
+
+    set_plotly_theme()
+    if style_plotly:
+        apply_plotly_theme()
+
     css = read_file("main.scss")
     body = f"<style>{css}</style>"
     st.html(body)

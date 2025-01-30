@@ -98,8 +98,28 @@ a:hover {
   color: var(--gray-700);
 }
 
+a:visited {
+  color: var(--gray-700);
+}
+
 a[data-testid="stLogoLink"] {
   display: none;
+}
+
+// disable link effect in figures such as charts and maps
+.modebar-group > a {
+  text-decoration: none;
+  background-image: none;
+}
+
+.modebar-group > a:hover {
+  text-decoration: none;
+  background-image: none;
+}
+
+.modebar-btn {
+  text-decoration: none;
+  background-image: none;
 }
 
 .site-title > span > a {
@@ -175,7 +195,8 @@ footer {
 code {
   background: var(--gray-200);
   color: rgb(84, 84, 84);
-  padding: 0.5em;
+  padding: 0.1em 0.2em 0.1em 0.2em;
+  font-size: medium;
 }
 
 /* Link styling */
@@ -192,7 +213,6 @@ div[data-testid="stMarkdownContainer"] > ul > li > a {
 
 div[data-testid="stMarkdownContainer"] a:hover,
 div[data-testid="stMarkdownContainer"] > ul > li > a:hover {
-  animation: lineLoop-animation-for-links 2s linear infinite;
   color: var(--black);
 }
 
@@ -411,10 +431,10 @@ div[data-testid="stMultiSelect"] > div > div > div {
 
 /* Checkbox styling */
 div[data-testid="stCheckbox"] > label > span {
-  background-color: #ffffff;
   border-color: var(--dark-red);
-  background: url(https://design.undp.org/static/media/icon-check.b332b98d.svg)
-    no-repeat center center;
+  // background-color: #ffffff;
+  // background: url(https://design.undp.org/static/media/icon-check.b332b98d.svg)
+  //   no-repeat center center;
 }
 
 /* Accordion styling */

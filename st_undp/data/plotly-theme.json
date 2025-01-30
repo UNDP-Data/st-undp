@@ -1,0 +1,274 @@
+{
+    "layout": {
+        "annotationdefaults": {
+            "arrowcolor": "#006EB5",
+            "arrowhead": 0,
+            "arrowwidth": 1,
+            "font": {
+                "color": "#232E3D",
+                "size": 16
+            },
+            "showarrow": false,
+            "x": 0,
+            "xref": "x domain",
+            "y": -0.2,
+            "yref": "y domain"
+        },
+        "colorway": [
+            "#006eb5",
+            "#5DD4F0",
+            "#02A38A",
+            "#E78625",
+            "#E0529E",
+            "#757AF0",
+            "#A0C236",
+            "#FBC412",
+            "#BF8B2E",
+            "#A9B1B7"
+        ],
+        "font": {
+            "color": "#232E3D",
+            "family": "ProximaNova, sans-serif",
+            "size": 14
+        },
+        "paper_bgcolor": "#F7F7F7",
+        "plot_bgcolor": "#EDEFF0",
+        "colorscale": {
+            "diverging": [
+                [
+                    0,
+                    "#d9382d"
+                ],
+                [
+                    0.1,
+                    "#e47559"
+                ],
+                [
+                    0.2,
+                    "#eea57d"
+                ],
+                [
+                    0.3,
+                    "#f6d39e"
+                ],
+                [
+                    0.4,
+                    "#ffffbf"
+                ],
+                [
+                    0.5,
+                    "#bae0e1"
+                ],
+                [
+                    0.6,
+                    "#89bfdc"
+                ],
+                [
+                    0.7,
+                    "#5f9dcc"
+                ],
+                [
+                    0.8,
+                    "#347cbc"
+                ],
+                [
+                    0.9,
+                    "#095aab"
+                ],
+                [
+                    1,
+                    "#650000"
+                ]
+            ],
+            "sequential": [
+                [
+                    0.0,
+                    "#FFF4AC"
+                ],
+                [
+                    0.1111111111111111,
+                    "#FBD68A"
+                ],
+                [
+                    0.2222222222222222,
+                    "#F6B666"
+                ],
+                [
+                    0.3333333333333333,
+                    "#F29641"
+                ],
+                [
+                    0.4444444444444444,
+                    "#E7752D"
+                ],
+                [
+                    0.5555555555555556,
+                    "#DB521A"
+                ],
+                [
+                    0.6666666666666666,
+                    "#C92B06"
+                ],
+                [
+                    0.7777777777777778,
+                    "#A71C04"
+                ],
+                [
+                    0.8888888888888888,
+                    "#850E02"
+                ],
+                [
+                    1.0,
+                    "#650000"
+                ]
+            ],
+            "sequentialminus": [
+                [
+                    0.0,
+                    "#FFF4AC"
+                ],
+                [
+                    0.1111111111111111,
+                    "#DDE797"
+                ],
+                [
+                    0.2222222222222222,
+                    "#BADA81"
+                ],
+                [
+                    0.3333333333333333,
+                    "#96CD6B"
+                ],
+                [
+                    0.4444444444444444,
+                    "#78BE5E"
+                ],
+                [
+                    0.5555555555555556,
+                    "#60AD5B"
+                ],
+                [
+                    0.6666666666666666,
+                    "#489D59"
+                ],
+                [
+                    0.7777777777777778,
+                    "#308C56"
+                ],
+                [
+                    0.8888888888888888,
+                    "#187B54"
+                ],
+                [
+                    1.0,
+                    "#006A51"
+                ]
+            ]
+        },
+        "geo": {
+            "bgcolor": "#F7F7F7",
+            "lakecolor": "#FFFFFF",
+            "landcolor": "#EDEFF0",
+            "showlakes": true,
+            "showland": true,
+            "subunitcolor": "#FFFFFF"
+        },
+        "hoverlabel": {
+            "align": "left"
+        },
+        "hovermode": "closest",
+        "mapbox": {
+            "style": "light"
+        },
+        "polar": {
+            "angularaxis": {
+                "gridcolor": "#FFFFFF",
+                "linecolor": "#FFFFFF",
+                "ticks": ""
+            },
+            "bgcolor": "#EDEFF0",
+            "radialaxis": {
+                "gridcolor": "#FFFFFF",
+                "linecolor": "#FFFFFF",
+                "ticks": ""
+            }
+        },
+        "scene": {
+            "xaxis": {
+                "backgroundcolor": "#EDEFF0",
+                "gridcolor": "#FFFFFF",
+                "gridwidth": 2,
+                "linecolor": "#FFFFFF",
+                "showbackground": true,
+                "ticks": "",
+                "zerolinecolor": "#FFFFFF"
+            },
+            "yaxis": {
+                "backgroundcolor": "#EDEFF0",
+                "gridcolor": "#FFFFFF",
+                "gridwidth": 2,
+                "linecolor": "#FFFFFF",
+                "showbackground": true,
+                "ticks": "",
+                "zerolinecolor": "#FFFFFF"
+            },
+            "zaxis": {
+                "backgroundcolor": "#EDEFF0",
+                "gridcolor": "#FFFFFF",
+                "gridwidth": 2,
+                "linecolor": "#FFFFFF",
+                "showbackground": true,
+                "ticks": "",
+                "zerolinecolor": "#FFFFFF"
+            }
+        },
+        "shapedefaults": {
+            "line": {
+                "color": "#232E3D"
+            }
+        },
+        "ternary": {
+            "aaxis": {
+                "gridcolor": "#FFFFFF",
+                "linecolor": "#FFFFFF",
+                "ticks": ""
+            },
+            "baxis": {
+                "gridcolor": "#FFFFFF",
+                "linecolor": "#FFFFFF",
+                "ticks": ""
+            },
+            "caxis": {
+                "gridcolor": "#FFFFFF",
+                "linecolor": "#FFFFFF",
+                "ticks": ""
+            },
+            "bgcolor": "#EDEFF0"
+        },
+        "title": {
+            "x": 0.05
+        },
+        "xaxis": {
+            "automargin": true,
+            "gridcolor": "#D4D6D8",
+            "linecolor": "#A9B1B7",
+            "ticks": "",
+            "title": {
+                "standoff": 15
+            },
+            "zerolinecolor": "#D4D6D8",
+            "zerolinewidth": 2
+        },
+        "yaxis": {
+            "automargin": true,
+            "gridcolor": "#D4D6D8",
+            "linecolor": "#A9B1B7",
+            "ticks": "",
+            "title": {
+                "standoff": 15
+            },
+            "zerolinecolor": "#D4D6D8",
+            "zerolinewidth": 2
+        }
+    }
+}
