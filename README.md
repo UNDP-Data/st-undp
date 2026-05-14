@@ -10,6 +10,9 @@
 A utility package that styles Streamlit apps according to [UNDP Design System](https://design.undp.org).
 Check out the [documentation](https://undp-data.github.io/st-undp) or explore this [live demo app](https://st-undp.azurewebsites.net).
 
+> [!WARNING]  
+> This project has been superceded by [`py-shiny-starter-kit`](https://github.com/UNDP-Data/py-shiny-starter-kit) which is now the recommended framework for developing data applications at UNDP. `st-undp` is archived and will recieve no updates.
+
 ![Preview](docs/assets/images/preview.gif)
 
 ## Table of Contents
